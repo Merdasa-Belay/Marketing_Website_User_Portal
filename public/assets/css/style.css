@@ -1,0 +1,196 @@
+/* General style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "inter", sans-serif, serif;
+}
+
+body {
+  background-image: linear-gradient(to right, #ffead1, #a5d2eb);
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 32px;
+}
+#search-data-container {
+  text-align: center;
+}
+
+#input-search {
+  font-family: "inter", sans-serif, serif;
+  font-weight: 400;
+  height: 28px;
+  width: 591px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #0000000d;
+  border: 0;
+  border-radius: 6px;
+}
+
+#image-dudu {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#datadudu-image {
+  width: 224.49px;
+  height: 56px;
+  margin: auto;
+}
+
+#register-form {
+  width: 430px;
+  height: 938px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 32px;
+}
+
+#first-line {
+  font-family: "inter", sans-serif, serif;
+
+  padding-bottom: 50px;
+  font-size: 1 rem;
+  text-align: center;
+  color: #475467;
+  background-color: #f9fafb;
+  border-radius: 20px 20px 0 0;
+  height: 92px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  padding-top: 30px;
+}
+
+.topbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#individual {
+  /* margin-right: 10px; */
+  background: linear-gradient(124.73deg, #ffead1 18.81%, #a5d2eb 81.07%);
+  color: black;
+  font-weight: 700;
+  border-color: #f2f4f7;
+  width: 183px;
+  height: 44px;
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 1;
+}
+
+#corporate {
+  background-color: #f2f4f7;
+  color: black;
+  font-weight: 700;
+  border-radius: 0;
+  border-color: #f2f4f7;
+  width: 183px;
+  height: 44px;
+  padding: 12px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-left: -8px;
+}
+
+#register-name {
+  font-family: "inter", sans-serif, serif;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+#register-input {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+#registered-password {
+  position: relative;
+  width: 90%;
+}
+
+.password-container {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+#toggler {
+  position: absolute;
+  top: 72%;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  /* overflow: hidden; */
+}
+
+#register-password {
+  font-family: "inter", sans-serif, serif;
+
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 32px;
+}
+
+.form-text {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.terms-policy {
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  color: #475467;
+  font-weight: 500;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+#term {
+  font-size: 14px;
+  color: #1662d3;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+#register-btn {
+  margin-left: 32px;
+  width: 366px;
+  height: 60px;
+  padding: 16px 28px 16px 28px;
+  background-color: #0046c4;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.login {
+  margin-left: 100px;
+  font-weight: 400;
+  margin-top: 32px;
+  margin-bottom: 96px;
+}
+#login-link {
+  font-weight: 600;
+  color: black;
+}
