@@ -1,0 +1,16 @@
+body {
+    background-image: linear-gradient(to right, #ffead1, #a5d2eb);
+    padding: 0;
+    margin: 0;
+}
+.datadudu {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#datadudu {
+    width: 224.49px;
+    height: 56px;
+    margin-top: 50px;
+}
