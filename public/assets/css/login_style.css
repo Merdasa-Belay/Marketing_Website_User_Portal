@@ -1,16 +1,29 @@
 body {
     background-image: linear-gradient(to right, #ffead1, #a5d2eb);
+    width: 1440px;
+    height: 960px;
     padding: 0;
     margin: 0;
 }
 .datadudu {
-    display: grid;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 80px;
+    width: 1280px;
+    height: 56px;
+    margin-top: 48px;
 }
 
 #datadudu {
     width: 224.49px;
     height: 56px;
-    margin-top: 50px;
+}
+
+.login {
+    width: 1280px;
+    height: 526px;
+    margin-left: 80px;
+    margin-top: 64px;
 }
