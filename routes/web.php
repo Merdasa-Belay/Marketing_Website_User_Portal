@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/student_register', [StudentController::class, "registration"]);
 Route::get('/student_login', function () {
+
+
+
     return view('student_login');
 });
 

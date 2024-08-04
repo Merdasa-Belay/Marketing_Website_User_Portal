@@ -1,29 +1,113 @@
 body {
     background-image: linear-gradient(to right, #ffead1, #a5d2eb);
-    width: 1440px;
-    height: 960px;
     padding: 0;
     margin: 0;
-}
-.datadudu {
-    position: relative;
+    font-family: "inter", sans-serif, serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 80px;
-    width: 1280px;
-    height: 56px;
-    margin-top: 48px;
+    flex-direction: column;
 }
-
-#datadudu {
-    width: 224.49px;
-    height: 56px;
+.logo-image {
+    position: relative;
+    /* text-align: center   ; */
+    margin-top: 48px;
+    margin-bottom: 64px;
+}
+.login-form {
+    border-radius: 16px;
+    /* border-top-right-radius: 16px; */
 }
 
 .login {
-    width: 1280px;
-    height: 526px;
-    margin-left: 80px;
-    margin-top: 64px;
+    background-color: #f9fafb;
+    width: 430px;
+    height: 94px;
+    padding-top: 16px;
+    text-align: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.login-header {
+    font-weight: 600;
+}
+
+#login-message {
+    font-weight: normal;
+    color: #475467;
+}
+
+.login-form {
+    background-color: #ffffff;
+
+    width: 430px;
+}
+#login-name {
+    font-family: "inter", sans-serif, serif;
+
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 32px;
+}
+#login-input {
+    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.password-container {
+    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+#forget-password {
+    color: #e08500;
+    margin-left: 180px;
+}
+
+#toggler {
+    position: absolute;
+    top: 80%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    /* overflow: hidden; */
+}
+.agreement {
+    width: 366px;
+    height: 40px;
+    font-size: regular;
+    text-align: center;
+    margin-left: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#terms-policy {
+    color: #1662d3;
+}
+
+#login-btn {
+    background-color: #0046c4;
+    width: 366px;
+    height: 60px;
+    border-radius: 16px;
+    color: #ffffff;
+    font-weight: 300;
+    margin-left: 32px;
+    margin-bottom: 32px;
+}
+
+.new-user {
+    margin-top: 24px;
+    text-align: center;
+    font-weight: normal;
+}
+
+#signup {
+    font-weight: 600;
 }
