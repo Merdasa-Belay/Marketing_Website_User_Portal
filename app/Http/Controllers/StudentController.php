@@ -12,4 +12,8 @@ class StudentController extends Controller
         $name = 'eyob';
         return view('register', compact('name'));
     }
+    public function login_page()
+    {
+        return view('student_login');
+    }
 }

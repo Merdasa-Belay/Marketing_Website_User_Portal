@@ -20,7 +20,7 @@
 <body>
     {{-- Datadudu logo --}}
     <div class="logo-image mb-3">
-        <img src="{{ asset('assets/image/DataDudu 3.png') }}" class="img-fluid" style="width: 224.49px" ">
+        <img src="{{ asset('assets/image/DataDudu 3.png') }}" class="img-fluid" style="height: 56px" ">
     </div>
 
     {{-- login form --}}
@@ -62,7 +62,8 @@
     <button id="login-btn" type="button" class="btn btn-primary">Login to your account</button>
     </div>
 
-    <p class="new-user">New to DataDudu? <span id="signup">Register</span></p>
+    <p class="new-user">New to DataDudu? <a id="register-link" href="/student_login">Register</a>
+    </p>
 
 
     </div>

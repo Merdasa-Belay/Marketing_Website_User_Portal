@@ -12,7 +12,7 @@ body {
 .logo-image {
     position: relative;
     /* text-align: center   ; */
-    margin-top: 48px;
+    margin-top: 68px;
     margin-bottom: 64px;
 }
 .login-form {
@@ -108,6 +108,7 @@ body {
     font-weight: normal;
 }
 
-#signup {
+#register-link {
     font-weight: 600;
+    color: #000;
 }
