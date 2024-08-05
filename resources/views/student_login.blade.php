@@ -62,7 +62,8 @@
     <button id="login-btn" type="button" class="btn btn-primary">Login to your account</button>
     </div>
 
-    <p class="new-user">New to DataDudu? <span id="signup">Register</span></p>
+    <p class="new-user">New to DataDudu? <a id="register-link" href="/student_login">Register</a>
+    </p>
 
 
     </div>

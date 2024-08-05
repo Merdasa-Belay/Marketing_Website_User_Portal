@@ -108,6 +108,7 @@ body {
     font-weight: normal;
 }
 
-#signup {
+#register-link {
     font-weight: 600;
+    color: #000;
 }
