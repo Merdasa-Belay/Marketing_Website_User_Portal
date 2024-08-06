@@ -173,9 +173,9 @@
 
 
 
-  </body>
+  </body>n
 
-  <script></script>
+  <script src="asset{{ 'assets/js/register.js' }}"></script>
 
 
 
