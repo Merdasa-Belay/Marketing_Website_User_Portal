@@ -158,7 +158,7 @@
         </div>
 
         <div class="login">Already have an account?
-            <a id="login-link" href="#">Login</count>
+            <a id="login-link" href="/student_login">Login</count>
 
         </div>
 
