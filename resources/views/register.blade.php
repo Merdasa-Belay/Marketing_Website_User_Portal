@@ -45,130 +45,135 @@
 
         <!-- register form -->
 
-        <div class="container-fuild" id="register-form">
+        <form method="POST" action="/customers">
+            @csrf
+            <div class="container-fuild" id="register-form">
 
-            <div id="first-line">
-                <h2>Register for a DataTree account.</h2>
-                <span id="lorem">Lorem ipsum dolor sit amet consectetur.</span>
+                <div id="first-line">
+                    <h2>Register for a DataTree account.</h2>
+                    <span id="lorem">Lorem ipsum dolor sit amet consectetur.</span>
+
+                </div>
+
+                <!-- Individual and corporate button -->
+
+                <div class="topbuttons">
+                    <button id="individual" type="button" class="btn btn-primary btn-sm">Individual</button>
+                    <button id="corporate" type="button" class="btn btn-primary btn-sm">Corporate</button>
+                </div>
+
+                <!-- title form -->
+
+                <div id="register-input" class="form-group">
+                    <label id="register-name" for="inputPassword5" class="form-label">Title</label>
+
+
+                    <select class="form-select" id="inputGroupSelect02" name="title">
+                        <option selected>Select title</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <!--  Full name -->
+                <div id="register-input" class="form-group">
+                    <label id="register-name" class="form-label">Full name</label>
+
+                    <input id="register-input" type="text" id="inputPassword5" class="form-control"
+                        aria-describedby="passwordHelpBlock" placeholder="First and last name" name="fullname">
+                </div>
+
+
+                <!-- select country -->
+                <div id="register-input" class="form-group">
+                    <label id="register-name" for="inputPassword5" class="form-label">Country</label>
+
+
+
+
+                    <select class="form-select" id="inputGroupSelect02" name="country">
+                        <option selected>Select country</option>
+                        <option value="1">Ethiopia</option>
+                        <option value="2">Kenya</option>
+                        <option value="3">Uganada</option>
+                    </select>
+                </div>
+
+                <!--  Phone number -->
+                <div id="register-input" class="form-group">
+                    <label id="register-name" class="form-label">Phone number</label>
+
+                    <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
+                        placeholder="Phone number" name="phone" </div>
+
+                    <!--Email address  -->
+                    <div id="register-input" class="form-group">
+                        <label id="register-name" class="form-label">Email address</label>
+
+
+                        <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
+                            placeholder="Email address" name="email">
+
+                    </div>
+
+
+                    <!--  Password -->
+                    <div class="form-group password-container">
+                        <label id="register-name" for="inputPassword5" class="form-label">Password</label>
+
+                        <input id="password" type="password" class="form-control" aria-describedby="passwordHelpBlock"
+                            name="password">
+
+                        <i onclick="showHide()" id="toggler"class="far fa-eye"></i>
+
+
+                    </div>
+                    <div id="passwordHelpBlock" class="form-text">
+                        Must be at least 8 characters.
+                    </div>
+
+
+                    <!--Confirm password  -->
+                    <div class="form-group password-container">
+                        <label id="register-name" for="inputPassword5" class="form-label">Confirm password</label>
+
+
+                        <input id="Confirmpassword" type="password" class="form-control"
+                            aria-describedby="passwordHelpBlock" placeholder="" name="confirmpassword">
+                        <i onclick="showPassword()" id="confirmtoggler"class="far fa-eye"></i>
+                    </div>
+
+                    <!-- Terms and policy -->
+                    <div class="terms-policy">
+                        By registering, you agree to DataDudu
+                        <span id="term">
+                            Terms and Privacy Policy.
+                        </span>
+                    </div>
+
+                    <!-- Register button -->
+
+
+
+                    <button id="register-btn" type="submit" class="btn btn-primary"
+                        href="/customers/create">Register</button>
+
+                </div>
+
+                <div class="login">Already have an account?
+                    <a id="login-link" href="/customer_login">Login</count>
+
+                </div>
+
 
             </div>
-
-            <!-- Individual and corporate button -->
-
-            <div class="topbuttons">
-                <button id="individual" type="button" class="btn btn-primary btn-sm">Individual</button>
-                <button id="corporate" type="button" class="btn btn-primary btn-sm">Corporate</button>
-            </div>
-
-            <!-- title form -->
-            <div id="register-input" class="form-group">
-                <label id="register-name" for="inputPassword5" class="form-label">Title</label>
-
-
-                <select class="form-select" id="inputGroupSelect02">
-                    <option selected>Select title</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-
-            <!--  Full name -->
-            <div id="register-input" class="form-group">
-                <label id="register-name" for="inputPassword5" class="form-label">Full name</label>
-
-                <input id="register-input" type="password" id="inputPassword5" class="form-control"
-                    aria-describedby="passwordHelpBlock" placeholder="First and last name">
-            </div>
-
-
-            <!-- select country -->
-            <div id="register-input" class="form-group">
-                <label id="register-name" for="inputPassword5" class="form-label">Country</label>
-
-
-
-
-                <select class="form-select" id="inputGroupSelect02">
-                    <option selected>Select country</option>
-                    <option value="1">Ethiopia</option>
-                    <option value="2">Kenya</option>
-                    <option value="3">Uganada</option>
-                </select>
-            </div>
-
-            <!--  Phone number -->
-            <div id="register-input" class="form-group">
-                <label id="register-name" class="form-label">Phone number</label>
-
-                <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
-                    placeholder="Phone number">
-            </div>
-
-            <!--Email address  -->
-            <div id="register-input" class="form-group">
-                <label id="register-name" class="form-label">Email address</label>
-
-
-                <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
-                    placeholder="Email address">
-
-            </div>
-
-
-            <!--  Password -->
-            <div class="form-group password-container">
-                <label id="register-name" for="inputPassword5" class="form-label">Password</label>
-
-                <input id="password" type="password" class="form-control" aria-describedby="passwordHelpBlock">
-
-                <i onclick="showHide()" id="toggler"class="far fa-eye"></i>
-
-
-            </div>
-            <div id="passwordHelpBlock" class="form-text">
-                Must be at least 8 characters.
-            </div>
-
-
-            <!--Confirm password  -->
-            <div class="form-group password-container">
-                <label id="register-name" for="inputPassword5" class="form-label">Confirm password</label>
-
-
-                <input id="Confirmpassword" type="password" class="form-control"
-                    aria-describedby="passwordHelpBlock" placeholder="">
-                <i onclick="showPassword()" id="confirmtoggler"class="far fa-eye"></i>
-            </div>
-
-            <!-- Terms and policy -->
-            <div class="terms-policy">
-                By registering, you agree to DataDudu
-                <span id="term">
-                    Terms and Privacy Policy.
-                </span>
-            </div>
-
-            <!-- Register button -->
-
-
-
-            <button id="register-btn" type="button" class="btn btn-primary">Register</button>
-
-        </div>
-
-        <div class="login">Already have an account?
-            <a id="login-link" href="/student_login">Login</count>
-
-        </div>
 
 
     </div>
 
 
-    </div>
-
-
+    </form>
 
 
 
