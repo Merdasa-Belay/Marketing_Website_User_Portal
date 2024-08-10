@@ -105,69 +105,70 @@
                     <label id="register-name" class="form-label">Phone number</label>
 
                     <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
-                        placeholder="Phone number" name="phone" </div>
+                        placeholder="Phone number" name="phone">
+                </div>
 
-                    <!--Email address  -->
-                    <div id="register-input" class="form-group">
-                        <label id="register-name" class="form-label">Email address</label>
-
-
-                        <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
-                            placeholder="Email address" name="email">
-
-                    </div>
+                <!--Email address  -->
+                <div id="register-input" class="form-group">
+                    <label id="register-name" class="form-label">Email address</label>
 
 
-                    <!--  Password -->
-                    <div class="form-group password-container">
-                        <label id="register-name" for="inputPassword5" class="form-label">Password</label>
-
-                        <input id="password" type="password" class="form-control" aria-describedby="passwordHelpBlock"
-                            name="password">
-
-                        <i onclick="showHide()" id="toggler"class="far fa-eye"></i>
-
-
-                    </div>
-                    <div id="passwordHelpBlock" class="form-text">
-                        Must be at least 8 characters.
-                    </div>
-
-
-                    <!--Confirm password  -->
-                    <div class="form-group password-container">
-                        <label id="register-name" for="inputPassword5" class="form-label">Confirm password</label>
-
-
-                        <input id="Confirmpassword" type="password" class="form-control"
-                            aria-describedby="passwordHelpBlock" placeholder="" name="confirmpassword">
-                        <i onclick="showPassword()" id="confirmtoggler"class="far fa-eye"></i>
-                    </div>
-
-                    <!-- Terms and policy -->
-                    <div class="terms-policy">
-                        By registering, you agree to DataDudu
-                        <span id="term">
-                            Terms and Privacy Policy.
-                        </span>
-                    </div>
-
-                    <!-- Register button -->
-
-
-
-                    <button id="register-btn" type="submit" class="btn btn-primary"
-                        href="/customers/create">Register</button>
+                    <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
+                        placeholder="Email address" name="email">
 
                 </div>
 
-                <div class="login">Already have an account?
-                    <a id="login-link" href="/customer_login">Login</count>
+
+                <!--  Password -->
+                <div class="form-group password-container">
+                    <label id="register-name" for="inputPassword5" class="form-label">Password</label>
+
+                    <input id="password" type="password" class="form-control" aria-describedby="passwordHelpBlock"
+                        name="password">
+
+                    <i onclick="showHide()" id="toggler"class="far fa-eye"></i>
+
 
                 </div>
+                <div id="passwordHelpBlock" class="form-text">
+                    Must be at least 8 characters.
+                </div>
 
+
+                <!--Confirm password  -->
+                <div class="form-group password-container">
+                    <label id="register-name" for="inputPassword5" class="form-label">Confirm password</label>
+
+
+                    <input id="Confirmpassword" type="password" class="form-control"
+                        aria-describedby="passwordHelpBlock" placeholder="" name="confirmpassword">
+                    <i onclick="showPassword()" id="confirmtoggler"class="far fa-eye"></i>
+                </div>
+
+                <!-- Terms and policy -->
+                <div class="terms-policy">
+                    By registering, you agree to DataDudu
+                    <span id="term">
+                        Terms and Privacy Policy.
+                    </span>
+                </div>
+
+                <!-- Register button -->
+
+
+
+                <button id="register-btn" type="submit" class="btn btn-primary"
+                    href="/customers/create">Register</button>
 
             </div>
+
+            <div class="login">Already have an account?
+                <a id="login-link" href="/customer_login">Login</count>
+
+            </div>
+
+
+    </div>
 
 
     </div>
