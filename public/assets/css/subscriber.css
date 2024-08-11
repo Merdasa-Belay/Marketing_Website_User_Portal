@@ -13,9 +13,73 @@
 
 body {
     background-color: #f9fafb;
+    font-family: "inter", sans-serif, serif;
 }
-.nav-link {
+.nav-item {
+    position: relative;
+    display: grid;
+    align-items: center;
     color: #344054;
     font-weight: 700;
     font-size: 16px;
+}
+
+#profile-pic {
+    width: 40px;
+    height: 40px;
+    clip-path: circle();
+}
+
+#toggle {
+    color: #667085;
+}
+#detail {
+    font-size: 30px;
+    color: #000000;
+    font-weight: 600;
+    width: 150px;
+    height: 38px;
+}
+
+.detail-profile {
+    margin-top: 32px;
+    padding-left: 32px;
+}
+
+/* #dashboard {
+    margin-left: 80px;
+    margin-right: 80px;
+    width: 1280px;
+} */
+
+#detail2 {
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 16px;
+}
+#securty-detail {
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 16px;
+}
+
+#update-message {
+    font-weight: lighter;
+    font-size: 14px;
+    padding-left: 16px;
+}
+
+#left-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 592px;
+    height: 758px;
+    margin-right: 32px;
+}
+#right-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 592px;
+    height: 490px;
+    margin-bottom: 268px;
 }
