@@ -70,9 +70,8 @@
 
                     <select class="form-select" id="inputGroupSelect02" name="title">
                         <option selected>Select title</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">Mr</option>
+                        <option value="2">Mrs</option>
                     </select>
                 </div>
 

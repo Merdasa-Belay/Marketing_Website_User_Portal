@@ -22,6 +22,7 @@ class CustomerController extends Controller
     }
 
 
+
     public function index()
     {
         $customers = Customer::all();
@@ -46,9 +47,15 @@ class CustomerController extends Controller
         ]);
 
         if ($customer) {
-            return redirect('customers');
+            return redirect('subscriber_dashboard');
         }
         return 'error';
         //
+    }
+
+
+    public function subscription()
+    {
+        return view('subscriber');
     }
 }
