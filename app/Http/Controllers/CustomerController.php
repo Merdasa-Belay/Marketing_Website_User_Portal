@@ -21,6 +21,10 @@ class CustomerController extends Controller
         return view('customer_login');
     }
 
+    public function subscriber()
+    {
+        view('subscriber_dashboard');
+    }
 
     public function index()
     {
@@ -46,7 +50,7 @@ class CustomerController extends Controller
         ]);
 
         if ($customer) {
-            return redirect('customers');
+            return redirect('subscriber_dashboard');
         }
         return 'error';
         //
