@@ -33,15 +33,10 @@
         </div>
     </nav>
 
-
-
-
-
-
     <!-- Datadudu image -->
 
     <div id="image-dudu">
-        <img id="datadudu-image" src="{{ asset('assets/image/DataDudu 3.png') }}" alt="">
+        <img id="datadudu-image" src="{{ asset('assets/image/DataDudu_3.png') }}" alt="">
 
         <!-- register form -->
 
