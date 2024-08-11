@@ -47,7 +47,7 @@ class CustomerController extends Controller
         ]);
 
         if ($customer) {
-            return redirect('subscriber_dashboard');
+            return redirect('subscriber');
         }
         return 'error';
         //
