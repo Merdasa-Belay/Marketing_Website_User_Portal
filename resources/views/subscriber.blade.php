@@ -106,10 +106,48 @@
                         </div>
                         <select class="form-select form-select-lg mb-3 name-title" aria-label="Large select example">
                             <option class="title-option" selected>Mr</option>
-                            <option class="title-option" value="1">Mrs</option>
+                            <option class="title-option">Mrs</option>
 
                         </select>
+                        <!--Full name  -->
+                        <div class="form-group">
+                            <label id="login-name" class="form-label register-name">Full name</label>
 
+
+                            <input type="text" class="form-control form-placehoder"
+                                aria-describedby="passwordHelpBlock" placeholder="First and last name">
+
+                        </div>
+                        <!-- Select country -->
+                        <div class="form-group register-input">
+                            <label for="country" class="form-label register-name">Country</label>
+                            <select class="form-select" id="country" name="country">
+                                <option selected class="selected">Select country</option>
+                                <option>Ethiopia</option>
+                                <option>Kenya</option>
+                                <option>Uganda</option>
+                            </select>
+                        </div>
+                        {{-- phone number --}}
+
+                        <div class="form-group">
+                            <label id="login-name" class="form-label register-name">Phone number</label>
+
+
+                            <input type="text" class="form-control form-placehoder"
+                                aria-describedby="passwordHelpBlock" placeholder="Phone number">
+
+                        </div>
+                        {{-- Email address --}}
+                        <div class="form-group">
+                            <label class="form-label register-name">Email
+                                address</label>
+
+
+                            <input id="email-field" type="text" class="form-control form-placehoder"
+                                aria-describedby="passwordHelpBlock" placeholder="email@example.com">
+
+                        </div>
                     </div>
 
 
