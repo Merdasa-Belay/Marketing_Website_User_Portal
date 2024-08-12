@@ -46,8 +46,8 @@
                 <label for="title" class="form-label register-name">Title</label>
                 <select class="form-select" id="title" name="title">
                     <option selected>Select title</option>
-                    <option value="1">Mr</option>
-                    <option value="2">Mrs</option>
+                    <option>Mr</option>
+                    <option>Mrs</option>
                 </select>
             </div>
 
@@ -63,9 +63,9 @@
                 <label for="country" class="form-label register-name">Country</label>
                 <select class="form-select" id="country" name="country">
                     <option selected>Select country</option>
-                    <option value="1">Ethiopia</option>
-                    <option value="2">Kenya</option>
-                    <option value="3">Uganda</option>
+                    <option>Ethiopia</option>
+                    <option>Kenya</option>
+                    <option>Uganda</option>
                 </select>
             </div>
 
