@@ -83,6 +83,7 @@ body {
     background-color: #ffffff;
     border-radius: 16px;
     height: 414px;
+    padding-top: 24px;
 }
 #pic-edit {
     width: 80px;
@@ -98,6 +99,8 @@ body {
     font-size: 16px;
 }
 .profile-picture {
+    display: flex;
+
     width: 177px;
     height: 80px;
     margin-bottom: 32px;
@@ -107,11 +110,26 @@ body {
     height: 20px;
     width: 20px;
     margin-left: 16px;
+    margin-right: 8px;
+    margin-top: 30px;
     fill: hsl(219, 100%, 38%);
 }
 
+.change {
+    position: relative;
+    margin-top: 30px;
+    width: 53px;
+    height: 20px;
+    color: #0046c4;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-input {
+    margin-bottom: 20px;
+}
+
 .register-name {
-    margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
     color: #000000;
@@ -120,6 +138,7 @@ body {
     font-size: 16px;
     color: #000000;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 #email-field {
     background-color: #d0d5dd;
@@ -128,4 +147,45 @@ body {
 .form-control::placeholder {
     color: #98a2b3;
     opacity: 1;
+}
+#save-btn {
+    background-color: #0046c4;
+    width: 181px;
+    height: 60px;
+    margin-top: 22px;
+    border-radius: 16px;
+}
+.form-input {
+    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+#toggler {
+    position: absolute;
+    top: 55%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    /* overflow: hidden; */
+}
+#newtoggler {
+    position: absolute;
+    top: 72%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    /* overflow: hidden; */
+}
+
+#confirmtoggler {
+    position: absolute;
+    top: 34%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    /* overflow: hidden; */
 }
