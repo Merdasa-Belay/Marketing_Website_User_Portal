@@ -123,6 +123,7 @@ body {
     color: #0046c4;
     font-size: 14px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .form-input {

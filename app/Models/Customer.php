@@ -18,4 +18,9 @@ class Customer extends Model
         'password',
         'confirmpassword'
     ];
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
 }
