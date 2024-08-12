@@ -17,6 +17,12 @@
     {{-- stylesheet --}}
 
     <link rel="stylesheet" href="{{ asset('assets/css/subscriber.css') }}">
+    {{-- Inter font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -83,15 +89,38 @@
             </div>
 
             <div class="d-flex align-items-center justify-center">
-                <div id="left-box">
+                <div class="left-box">
 
-                    <p id="detail2">Personal details</p>
-                    <p id="update-message">Update your personal details here.</p>
+                    <div class="left-header">
+                        <p id="detail2">Personal details</p>
+                        <p id="update-message">Update your personal details here.</p>
+
+                    </div>
+                    <div class="left-body">
+                        <div class="profile-picture">
+                            <img id="pic-edit" src="{{ asset('assets/image/joseph.jpg') }}" alt="">
+                            <svg class="camera-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M324.3 64c3.3 0 6.3 2.1 7.5 5.2l22.1 58.8H464c8.8 0 16 7.2 16 16v288c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16h110.2l20.1-53.6c2.3-6.2 8.3-10.4 15-10.4h131m0-32h-131c-20 0-37.9 12.4-44.9 31.1L136 96H48c-26.5 0-48 21.5-48 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48h-88l-14.3-38c-5.8-15.7-20.7-26-37.4-26zM256 408c-66.2 0-120-53.8-120-120s53.8-120 120-120 120 53.8 120 120-53.8 120-120 120zm0-208c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88z" />
+                            </svg>
+                        </div>
+                        <select class="form-select form-select-lg mb-3 name-title" aria-label="Large select example">
+                            <option class="title-option" selected>Mr</option>
+                            <option class="title-option" value="1">Mrs</option>
+
+                        </select>
+
+                    </div>
+
+
 
                 </div>
-                <div id="right-box">
-                    <p id="securty-detail">Security details</p>
-                    <p id="update-message">Update your personal details here.</p>
+                <div class="right-box">
+                    <div class="right-header">
+                        <p id="securty-detail">Security details</p>
+                        <p id="update-message">Update your personal details here.</p>
+                    </div>
+                    <div class="right-body"></div>
                 </div>
 
             </div>

@@ -7,14 +7,15 @@
 
 .navbar {
     background-color: #ffffff;
-    padding-right: 80px;
-    padding-left: 80px;
+    padding-right: 112px;
+    padding-left: 112px;
 }
 
 body {
     background-color: #f9fafb;
-    font-family: "inter", sans-serif, serif;
+    font-family: "Inter", Arial, sans-serif;
 }
+
 .nav-item {
     position: relative;
     display: grid;
@@ -43,43 +44,66 @@ body {
 
 .detail-profile {
     margin-top: 32px;
-    padding-left: 32px;
 }
-
-/* #dashboard {
-    margin-left: 80px;
-    margin-right: 80px;
-    width: 1280px;
-} */
 
 #detail2 {
     font-size: 18px;
     font-weight: 500;
-    padding-left: 16px;
 }
 #securty-detail {
     font-size: 18px;
     font-weight: 500;
-    padding-left: 16px;
 }
 
 #update-message {
-    font-weight: lighter;
+    font-weight: 500;
     font-size: 14px;
-    padding-left: 16px;
+    color: #667085;
 }
-
-#left-box {
-    background-color: #ffffff;
-    border-radius: 16px;
+.left-box {
     width: 592px;
     height: 758px;
-    margin-right: 32px;
 }
-#right-box {
+
+.right-box {
+    width: 592px;
+    height: 758px;
+}
+
+.left-body {
     background-color: #ffffff;
     border-radius: 16px;
-    width: 592px;
-    height: 490px;
-    margin-bottom: 268px;
+    height: 658px;
+    margin-right: 32px;
+    padding-top: 24px;
+    padding-left: 24px;
+}
+.right-body {
+    background-color: #ffffff;
+    border-radius: 16px;
+    height: 414px;
+}
+#pic-edit {
+    width: 80px;
+    height: 80px;
+    clip-path: circle();
+}
+.name-title {
+    width: 88px;
+    height: 44px;
+}
+.title-option {
+    font-size: 16px;
+}
+.profile-picture {
+    width: 177px;
+    height: 80px;
+    margin-bottom: 32px;
+}
+
+.camera-plus {
+    height: 20px;
+    width: 20px;
+    margin-left: 16px;
+    fill: #0046c4;
 }
