@@ -20,7 +20,7 @@
 <body>
     {{-- Datadudu logo --}}
     <div class="logo-image mb-3">
-        <img src="{{ asset('assets/image/DataDudu 3.png') }}" class="img-fluid" style="height: 56px" ">
+        <img src="{{ asset('assets/image/DataDudu_3.png') }}" class="img-fluid" style="height: 56px" ">
     </div>
 
     {{-- login form --}}

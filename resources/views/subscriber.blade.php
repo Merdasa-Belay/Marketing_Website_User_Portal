@@ -54,17 +54,19 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i></a>
+                            <a class="nav-link" href="#"><i id="toggle" class="fa-solid fa-gear"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-regular fa-bell"></i></a>
+                            <a class="nav-link" href="#"><i id="toggle" class="fa-regular fa-bell"></i></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#">Joe Bloggs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Photo</a>
+                            <a class="nav-link" href="#">
+                                <img id="profile-pic" src="{{ asset('assets/image/joseph.jpg') }}" alt="">
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +74,29 @@
         </div>
     </nav>
 
+    {{-- profile detail --}}
 
+    <div id="dashboard" class="container  min-vh-100">
+        <div class="container-fluid">
+            <div class="detail-profile">
+                <h1 id="detail"> My detail</h1>
+            </div>
+
+            <div class="d-flex align-items-center justify-center">
+                <div id="left-box">
+
+                    <p id="detail2">Personal details</p>
+                    <p id="update-message">Update your personal details here.</p>
+
+                </div>
+                <div id="right-box">
+                    <p id="securty-detail">Security details</p>
+                    <p id="update-message">Update your personal details here.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 </body>
 {{-- Bootstrap script --}}

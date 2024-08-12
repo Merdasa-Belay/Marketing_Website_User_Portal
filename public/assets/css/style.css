@@ -13,30 +13,6 @@ body {
     margin: 0;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffffff;
-    margin-bottom: 32px;
-}
-#search-data-container {
-    text-align: center;
-}
-
-#input-search {
-    font-family: "inter", sans-serif, serif;
-    font-weight: 400;
-    height: 28px;
-    width: 591px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #0000000d;
-    border: 0;
-    border-radius: 6px;
-}
-
 #image-dudu {
     display: grid;
     justify-content: center;
@@ -45,7 +21,7 @@ body {
 #datadudu-image {
     width: 224.49px;
     height: 56px;
-    margin: auto;
+    margin-top: 48px;
 }
 
 #register-form {
@@ -56,8 +32,11 @@ body {
     margin-top: 32px;
 }
 
-#first-line {
+.first-line {
     font-family: "inter", sans-serif, serif;
+    width: 430px;
+    height: 92px;
+    margin-left: -12px;
 
     padding-bottom: 50px;
     font-size: 1 rem;
@@ -65,7 +44,6 @@ body {
     color: #475467;
     background-color: #f9fafb;
     border-radius: 20px 20px 0 0;
-    height: 92px;
 }
 
 h2 {
@@ -80,6 +58,7 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    margin-bottom: 32px;
 }
 
 #individual {
@@ -109,16 +88,18 @@ h2 {
     margin-left: -8px;
 }
 
-#register-name {
+.register-name {
     font-family: "inter", sans-serif, serif;
 
     font-size: 14px;
     font-weight: 500;
+    color: #000000;
 }
-#register-input {
+.register-input {
     position: relative;
     padding-left: 32px;
     padding-right: 32px;
+    margin-top: 6px;
 }
 
 #registered-password {
@@ -195,7 +176,9 @@ h2 {
 }
 
 .login {
-    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 400;
     margin-top: 32px;
     margin-bottom: 96px;
