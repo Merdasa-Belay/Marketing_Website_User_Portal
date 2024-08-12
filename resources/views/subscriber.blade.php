@@ -99,10 +99,16 @@
                     <div class="left-body">
                         <div class="profile-picture">
                             <img id="pic-edit" src="{{ asset('assets/image/joseph.jpg') }}" alt="">
-                            <svg class="camera-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path
-                                    d="M324.3 64c3.3 0 6.3 2.1 7.5 5.2l22.1 58.8H464c8.8 0 16 7.2 16 16v288c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16h110.2l20.1-53.6c2.3-6.2 8.3-10.4 15-10.4h131m0-32h-131c-20 0-37.9 12.4-44.9 31.1L136 96H48c-26.5 0-48 21.5-48 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48h-88l-14.3-38c-5.8-15.7-20.7-26-37.4-26zM256 408c-66.2 0-120-53.8-120-120s53.8-120 120-120 120 53.8 120 120-53.8 120-120 120zm0-208c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88z" />
-                            </svg>
+                            <div class="change-pic">
+                                <svg class="camera-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M324.3 64c3.3 0 6.3 2.1 7.5 5.2l22.1 58.8H464c8.8 0 16 7.2 16 16v288c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16h110.2l20.1-53.6c2.3-6.2 8.3-10.4 15-10.4h131m0-32h-131c-20 0-37.9 12.4-44.9 31.1L136 96H48c-26.5 0-48 21.5-48 48v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48h-88l-14.3-38c-5.8-15.7-20.7-26-37.4-26zM256 408c-66.2 0-120-53.8-120-120s53.8-120 120-120 120 53.8 120 120-53.8 120-120 120zm0-208c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88z" />
+
+                                </svg>
+
+                            </div>
+                            <a class="change" href="#">Change</a>
+
                         </div>
                         <select class="form-select form-select-lg mb-3 name-title" aria-label="Large select example">
                             <option class="title-option" selected>Mr</option>
@@ -110,7 +116,7 @@
 
                         </select>
                         <!--Full name  -->
-                        <div class="form-group">
+                        <div class="form-group form-input">
                             <label id="login-name" class="form-label register-name">Full name</label>
 
 
@@ -119,7 +125,7 @@
 
                         </div>
                         <!-- Select country -->
-                        <div class="form-group register-input">
+                        <div class="form-group form-input">
                             <label for="country" class="form-label register-name">Country</label>
                             <select class="form-select" id="country" name="country">
                                 <option selected class="selected">Select country</option>
@@ -130,7 +136,7 @@
                         </div>
                         {{-- phone number --}}
 
-                        <div class="form-group">
+                        <div class="form-group form-input">
                             <label id="login-name" class="form-label register-name">Phone number</label>
 
 
@@ -139,7 +145,7 @@
 
                         </div>
                         {{-- Email address --}}
-                        <div class="form-group">
+                        <div class="form-group form-input">
                             <label class="form-label register-name">Email
                                 address</label>
 
@@ -148,6 +154,8 @@
                                 aria-describedby="passwordHelpBlock" placeholder="email@example.com">
 
                         </div>
+                        <!-- Save Changes button -->
+                        <button id="save-btn" type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
 
 
@@ -158,7 +166,35 @@
                         <p id="securty-detail">Security details</p>
                         <p id="update-message">Update your personal details here.</p>
                     </div>
-                    <div class="right-body"></div>
+                    <div class="right-body">
+                        <!-- Current Password -->
+                        <div class="form-group form-input">
+                            <label for="password" class="form-label register-name">Current password</label>
+                            <input id="currentpassword" type="password" class="form-control" name="password">
+                            <i onclick="currentPassword()" id="toggler" class="far fa-eye"></i>
+                            <div id="passwordHelpBlock" class="form-text">
+                                Must be at least 8 characters.
+                            </div>
+                        </div>
+                        <!--New Password -->
+                        <div class="form-group form-input">
+                            <label for="password" class="form-label register-name">New password</label>
+                            <input id="newpassword" type="password" class="form-control" name="password">
+                            <i onclick="newPassword()" id="newtoggler" class="far fa-eye"></i>
+
+                        </div>
+                        <!--Confirm Password -->
+                        <div class="form-group form-input">
+                            <label for="password" class="form-label register-name">Confirm password</label>
+                            <input id="confirmpassword" type="password" class="form-control" name="password">
+                            <i onclick="confirmPassword()" id="confirmtoggler" class="far fa-eye"></i>
+
+                            <!-- Save Changes button -->
+                            <button id="save-btn" type="submit" class="btn btn-primary">Save Changes</button>
+
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -170,5 +206,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
+<script src="{{ asset('assets/js/subscribe.js') }}"></script>
 
 </html>
