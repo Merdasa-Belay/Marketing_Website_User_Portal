@@ -116,8 +116,8 @@
 
                         </select>
                         <!--Full name  -->
-                        <div class="form-group form-input">
-                            <label id="login-name" class="form-label register-name">Full name</label>
+                        <div class="form-group">
+                            <label for="name" id="login-name" class="form-label register-name">Full name</label>
 
 
                             <input type="text" class="form-control form-placehoder"
@@ -125,7 +125,7 @@
 
                         </div>
                         <!-- Select country -->
-                        <div class="form-group form-input">
+                        <div class="form-group">
                             <label for="country" class="form-label register-name">Country</label>
                             <select class="form-select" id="country" name="country">
                                 <option selected class="selected">Select country</option>
@@ -136,8 +136,9 @@
                         </div>
                         {{-- phone number --}}
 
-                        <div class="form-group form-input">
-                            <label id="login-name" class="form-label register-name">Phone number</label>
+                        <div class="form-group">
+                            <label for="phone" id="login-name" class="form-label register-name">Phone
+                                number</label>
 
 
                             <input type="text" class="form-control form-placehoder"
@@ -145,8 +146,8 @@
 
                         </div>
                         {{-- Email address --}}
-                        <div class="form-group form-input">
-                            <label class="form-label register-name">Email
+                        <div class="form-group">
+                            <label for="email" class="form-label register-name">Email
                                 address</label>
 
 
@@ -185,7 +186,7 @@
                         </div>
                         <!--Confirm Password -->
                         <div class="form-group form-input">
-                            <label for="password" class="form-label register-name">Confirm password</label>
+                            <label for="confirmpassword" class="form-label register-name">Confirm password</label>
                             <input id="confirmpassword" type="password" class="form-control" name="password">
                             <i onclick="confirmPassword()" id="confirmtoggler" class="far fa-eye"></i>
 
