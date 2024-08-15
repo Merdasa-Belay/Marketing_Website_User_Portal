@@ -1,4 +1,4 @@
-
+// Password show or hide
 function currentPassword () {
     if (document.getElementById('currentpassword').type == 'password') {
       document.getElementById('toggler').classList = 'far fa-eye-slash'
