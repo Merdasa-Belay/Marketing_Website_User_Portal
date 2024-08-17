@@ -24,6 +24,7 @@
         <img id="datadudu-image" src="{{ asset('assets/image/DataDudu_3.png') }}" alt="">
     </div>
 
+
     <!-- Register form -->
     <form method="POST" action="{{ route('customers.store') }}">
         @csrf
@@ -113,6 +114,7 @@
             <a id="login-link" href="/customer_login">Login</a>
         </div>
     </form>
+
 
 </body>
 
