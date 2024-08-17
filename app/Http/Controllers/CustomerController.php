@@ -25,11 +25,11 @@ class CustomerController extends Controller
 
     public function index()
     {
-        $customers = Customer::latest()->paginate(5);
+
 
 
         $customers = Customer::all();
-        return view('customers.index', compact('customers'))->with(request()->input('page'));
+        return view('customers.index', compact('customers'));
     }
 
 
@@ -63,7 +63,6 @@ class CustomerController extends Controller
     {
         $customers = Customer::all();
 
-        // Pass the $customers variable to the view
         return view('subscriber', compact('customers'));
     }
 }
