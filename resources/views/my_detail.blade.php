@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('assets/css/subscriber.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/my_detail.css') }}">
 
     @foreach ($customers as $customer)
         {{-- Profile Detail --}}
@@ -78,7 +78,7 @@
                                 <div class="form-group form-input">
                                     <label for="currentpassword" class="form-label register-name">Current password</label>
                                     <input id="currentpassword" type="password" class="form-control" name="password"
-                                        placeholder="Enter current password">
+                                        value="{{ $customer->password }}" placeholder="Enter current password">
                                     <i onclick="currentPassword()" id="toggler" class="far fa-eye"></i>
                                     <div id="passwordHelpBlock" class="form-text">
                                         Must be at least 8 characters.
