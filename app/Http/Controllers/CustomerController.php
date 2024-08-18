@@ -67,4 +67,34 @@ class CustomerController extends Controller
 
         return view('my_detail', compact('customers', 'title'));
     }
+
+    public function myDashboard()
+    {
+        $title = 'My Dashboard';
+        $customers = Customer::all();
+
+
+        return view('my_dashboard', compact('title', 'customers'));
+    }
+
+
+
+    public function myReports()
+    {
+        $title = 'My Reports';
+        $customers = Customer::all();
+
+
+        return view('my_reports', compact('title', 'customers'));
+    }
+
+
+    public function myDatasets()
+    {
+        $title = 'My Datasets';
+        $customers = Customer::all();
+
+
+        return view('my_datasets', compact('title', 'customers'));
+    }
 }

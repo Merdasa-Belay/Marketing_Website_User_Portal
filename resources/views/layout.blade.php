@@ -42,22 +42,31 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::is('dashboard') ? 'active' : '' }}" aria-current="page"
-                                href="{{ url('/dashboard') }}">Dashboard</a>
+                            <a href="{{ route('my_dashboard') }}"
+                                class="nav-link {{ request()->routeIs('my_dashboard') ? 'active' : '' }}">My
+                                Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('my_detail') ? 'active' : '' }}"
-                                href="{{ url('/my_detail') }}">My Details</a>
+                            <a href="{{ route('my_detail') }}"
+                                class="nav-link {{ request()->routeIs('my_detail') ? 'active' : '' }}">My Details</a>
+                        </li>
+
+
+
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('my_reports') ? 'active' : '' }}"
-                                href="{{ url('/my_reports') }}">My Reports</a>
+                            <a href="{{ route('my_reports') }}"
+                                class="nav-link {{ request()->routeIs('my_reports') ? 'active' : '' }}">My
+                                Reports</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('datasets') ? 'active' : '' }}"
-                                href="{{ url('/datasets') }}">Datasets</a>
+                            <a href="{{ route('my_datasets') }}"
+                                class="nav-link {{ request()->routeIs('my_datasets') ? 'active' : '' }}">My
+                                Datasets</a>
                         </li>
                     </ul>
+
 
                     <div class="d-flex">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">

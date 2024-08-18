@@ -1,21 +1,6 @@
-.navbar {
-    background-color: #ffffff;
-    padding-right: 112px;
-    padding-left: 112px;
-}
-
 body {
     background-color: #f9fafb;
     font-family: "Inter", Arial, sans-serif;
-}
-
-.nav-item {
-    position: relative;
-    display: grid;
-    align-items: center;
-    color: #344054;
-    font-weight: 700;
-    font-size: 16px;
 }
 
 #profile-pic {
@@ -116,7 +101,7 @@ body {
     height: 20px;
     color: #0046c4;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
 }
 
@@ -182,5 +167,4 @@ body {
     transform: translateY(-50%);
     cursor: pointer;
     color: #6c757d;
-    /* overflow: hidden; */
 }

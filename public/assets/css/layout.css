@@ -4,24 +4,33 @@
     box-sizing: border-box;
     font-family: "inter", sans-serif, serif;
 }
+
 .navbar {
     background-color: #ffffff;
     padding-right: 112px;
     padding-left: 112px;
 }
 
-body {
-    background-color: #f9fafb;
-    font-family: "Inter", Arial, sans-serif;
-}
-
 .nav-item {
     position: relative;
     display: grid;
     align-items: center;
-    color: #344054;
-    font-weight: 700;
     font-size: 16px;
+    font-weight: 800;
+    color: #344054;
+}
+.nav-item .nav-link.active {
+    background: linear-gradient(to right, #f1c28c, #60b1df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    border-image: linear-gradient(to right, #f1c28c, #60b1df) 1;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
 }
 
 #profile-pic {
@@ -52,8 +61,4 @@ body {
 #securty-detail {
     font-size: 18px;
     font-weight: 500;
-}
-.nav-link.active {
-    font-weight: bold;
-    color: red;
 }
