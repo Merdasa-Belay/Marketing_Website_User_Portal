@@ -7,6 +7,7 @@
 
 .navbar {
     background-color: #ffffff;
+    height: 88px;
     padding-right: 112px;
     padding-left: 112px;
 }
@@ -16,7 +17,7 @@
     display: grid;
     align-items: center;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     color: #344054;
 }
 .nav-item .nav-link.active {
@@ -27,10 +28,10 @@
     border: 1px solid transparent;
     border-radius: 6px;
     border-image: linear-gradient(to right, #f1c28c, #60b1df) 1;
-    padding: 10px 20px;
     text-decoration: none;
     display: inline-block;
     transition: background 0.3s ease;
+    height: 40px;
 }
 
 #profile-pic {

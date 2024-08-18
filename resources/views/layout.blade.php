@@ -30,7 +30,7 @@
         {{-- Navbar --}}
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/my_detail') }}">
+                <a class="navbar-brand" href="{{ route('my_detail') }}">
                     <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Logo" width="200" height="50"
                         class="d-inline-block align-text-top">
                 </a>

@@ -8,15 +8,15 @@
         <form action="{{ route('customers.update', $customer->id) }}" method="POST">
             @csrf
             @method('PUT') {{-- If updating the customer --}}
-            <div id="dashboard" class="container min-vh-100">
+            <div class="dashboard" class="container min-vh-100">
                 <div class="container-fluid">
-                    <div class="detail-profile">
-                        <h1 id="detail">My detail</h1>
+                    <div class="my-detail">
+                        <h1 id="detail">My details</h1>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="left-box">
                             <div class="left-header">
-                                <p id="detail2">Personal details</p>
+                                <p id="personal-detail">Personal details</p>
                                 <p id="update-message">Update your personal details here.</p>
                             </div>
                             <div class="left-body">
@@ -65,12 +65,12 @@
                                         placeholder="email@example.com">
                                 </div>
                                 <!-- Save Changes button -->
-                                <button id="save-btn" type="submit" class="btn btn-primary">Save Changes</button>
+                                <button id="save-btn1" type="submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </div>
                         <div class="right-box">
                             <div class="right-header">
-                                <p id="security-detail">Security details</p>
+                                <p class="security-detail">Security details</p>
                                 <p id="update-message">Update your personal details here.</p>
                             </div>
                             <div class="right-body">
@@ -99,7 +99,7 @@
                                     <i onclick="confirmPassword()" id="confirmtoggler" class="far fa-eye"></i>
                                 </div>
                                 <!-- Save Changes button -->
-                                <button id="save-btn" type="submit" class="btn btn-primary">Save Changes</button>
+                                <button id="save-btn2" type="submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </div>
                     </div>
