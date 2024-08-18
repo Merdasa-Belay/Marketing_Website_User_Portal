@@ -52,17 +52,19 @@ class CustomerController extends Controller
         ]);
 
         if ($customer) {
-            return redirect('subscriber');
+            return redirect('my_detail');
         }
-        return 'error';
+        return 'customer_login';
         //
     }
 
 
-    public function subscription()
+
+    public function myDetail()
     {
         $customers = Customer::all();
+        $title = 'My Details';
 
-        return view('subscriber', compact('customers'));
+        return view('my_detail', compact('customers', 'title'));
     }
 }

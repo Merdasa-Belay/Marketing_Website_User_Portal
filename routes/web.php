@@ -10,4 +10,5 @@ Route::get('/customer_login', [CustomerController::class, "login_page"]);
 
 
 Route::resource('/customers', CustomerController::class);
-Route::get('/subscriber', [CustomerController::class, "subscription"]);
+Route::get('/my_detail', [CustomerController::class, "myDetail"]);
+Route::get('/my_details', [CustomerController::class, 'myDetails']);
