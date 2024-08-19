@@ -42,28 +42,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="{{ route('my_dashboard') }}"
-                                class="nav-link {{ request()->routeIs('my_dashboard') ? 'active' : '' }}">My
-                                Dashboard</a>
+                            <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
+                                My Dashboard
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_detail') }}"
-                                class="nav-link {{ request()->routeIs('my_detail') ? 'active' : '' }}">My Details</a>
-                        </li>
+                            <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>
+                                My Details
+                            </a>
 
 
 
 
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_reports') }}"
-                                class="nav-link {{ request()->routeIs('my_reports') ? 'active' : '' }}">My
-                                Reports</a>
+                            <a href="{{ route('my_reports') }}" @class(['nav-link', 'active' => request()->routeIs('my_reports')])>
+                                My Reports
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_datasets') }}"
-                                class="nav-link {{ request()->routeIs('my_datasets') ? 'active' : '' }}">My
-                                Datasets</a>
+                            <a href="{{ route('my_datasets') }}" @class(['nav-link', 'active' => request()->routeIs('my_datasets')])>
+                                My Datasets
+                            </a>
                         </li>
                     </ul>
 
