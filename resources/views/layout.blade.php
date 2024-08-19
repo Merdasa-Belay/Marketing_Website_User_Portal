@@ -43,7 +43,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
-                                My Dashboard
+                                Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
@@ -62,7 +62,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('my_datasets') }}" @class(['nav-link', 'active' => request()->routeIs('my_datasets')])>
-                                My Datasets
+                                Datasets
                             </a>
                         </li>
                     </ul>
