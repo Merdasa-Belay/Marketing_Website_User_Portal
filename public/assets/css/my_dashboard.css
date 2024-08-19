@@ -1,0 +1,127 @@
+body {
+    background-color: #f9fafb;
+    font-family: "Inter", Arial, sans-serif;
+}
+.my-dashboard {
+    display: flex;
+    width: 1440px;
+    height: 1468px;
+}
+
+.hero {
+    display: flex;
+    width: 1280px;
+    height: 160px;
+    margin-top: 31px;
+}
+.welcome-profile {
+    width: 389px;
+    height: 126px;
+}
+
+.welcome {
+    font-size: 30px;
+    color: #667085;
+}
+
+.bloggs {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.profile-id {
+    width: 249px;
+    height: 42px;
+    background-image: linear-gradient(to right, #ffead1, #a5d2eb);
+    border-radius: 21px;
+    color: #0046c4;
+    opacity: 100%;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.total {
+    width: 389px;
+    height: 126px;
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 16px;
+    background-color: #ffff;
+    opacity: 100%;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 24px;
+}
+
+.response {
+    width: 389px;
+    height: 126px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 16px;
+    background-color: #ffff;
+}
+.total-dataset {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+}
+.data-number {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+}
+.total-number {
+    display: grid;
+    padding-top: 24px;
+}
+
+.data-svg {
+    align-items: center;
+    margin-top: 31px;
+    margin-right: 24px;
+    background-color: #f2f4f7;
+    width: 64px;
+    height: 64px;
+    padding: 9.5px;
+    border-radius: 12px;
+}
+
+.active-svg {
+    align-items: center;
+    margin-top: 31px;
+    margin-right: 24px;
+    background-color: #f2f4f7;
+    width: 64px;
+    height: 64px;
+    padding: 9.5px;
+    border-radius: 12px;
+}
+
+.active-response {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.subscription {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.active-number {
+    display: grid;
+    padding-top: 24px;
+}
+
+.hr {
+    height: 10px;
+    margin-top: 50px;
+    background-color: #007bff;
+    width: 1280px;
+}
