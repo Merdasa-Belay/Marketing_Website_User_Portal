@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{-- Custom Stylesheet --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
 
     {{-- Inter Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,9 +91,7 @@
             </div>
         </nav>
     @endforeach
-    @section('sidebar')
-        {{-- This is the master sidebar. --}}
-    @show
+
 
     <div class="container">
         @yield('content')
