@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
+
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Font awesome -->
+    {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{-- Custom Stylesheet --}}
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
@@ -26,12 +26,12 @@
 </head>
 
 <body>
+    {{-- Navbar --}}
     @foreach ($customers as $customer)
-        {{-- Navbar --}}
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+        <div class="container-fluid user-navbar">
+            <nav class="navbar navbar-expand-lg" style="background-color: #ffffff;">
                 <a class="navbar-brand" href="{{ route('my_detail') }}">
-                    <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Logo" width="200" height="50"
+                    <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Company Logo" width="200" height="50"
                         class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,20 +42,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <button onclick="window.location='{{ route('my_dashboard') }}'"
-                                @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
+                            <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
                                 Dashboard
-                            </button>
-
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>
                                 My Details
                             </a>
-
-
-
-
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('my_reports') }}" @class(['nav-link', 'active' => request()->routeIs('my_reports')])>
@@ -68,9 +62,7 @@
                             </a>
                         </li>
                     </ul>
-
-
-                    <div class="d-flex">
+                    <ul class="navbar-nav ms-auto">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i id="toggle" class="fa-solid fa-gear"></i></a>
@@ -88,22 +80,22 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </ul>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
+        <div class="container">
+            @yield('content')
+        </div>
     @endforeach
 
 
-    <div class="container">
-        @yield('content')
-    </div>
-
+    {{-- Bootstrap --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
 </body>
-{{-- Bootstrap --}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-</script>
 
 </html>

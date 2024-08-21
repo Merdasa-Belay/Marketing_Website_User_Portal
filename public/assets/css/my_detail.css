@@ -2,20 +2,26 @@ body {
     background-color: #f9fafb;
     font-family: "Inter", Arial, sans-serif;
 }
-
-.dashboard {
-    padding: 0;
+.user-dashboard {
+    margin-top: 32px;
 }
 
-#profile-pic {
-    width: 40px;
-    height: 40px;
+#pic-edit {
+    width: 80px;
+    height: 80px;
     clip-path: circle();
 }
 
-#toggle {
-    color: #667085;
+.left-body {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    padding-top: 24px;
+    margin-bottom: 48px;
 }
+
 #detail {
     font-size: 30px;
     color: #000000;
@@ -23,12 +29,6 @@ body {
     width: 150px;
     height: 38px;
 }
-
-.my-detail {
-    margin-top: 32px;
-    font-weight: 700;
-}
-
 #personal-detail {
     font-size: 18px;
     font-weight: 600;
@@ -38,43 +38,10 @@ body {
     font-weight: 600;
     font-size: 18px;
 }
-
 #update-message {
     font-weight: 500;
     font-size: 14px;
     color: #667085;
-}
-.left-box {
-    width: 592px;
-    height: 758px;
-}
-
-.right-box {
-    width: 592px;
-    height: 758px;
-}
-
-.left-body {
-    background-color: #ffffff;
-    border-radius: 16px;
-    height: 592px;
-    margin-right: 32px;
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-.right-body {
-    background-color: #ffffff;
-    border-radius: 16px;
-    height: 414px;
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-#pic-edit {
-    width: 80px;
-    height: 80px;
-    clip-path: circle();
 }
 .name-title {
     width: 88px;
@@ -139,7 +106,32 @@ body {
     width: 181px;
     height: 60px;
     margin-top: 32px;
+    margin-bottom: 24px;
     border-radius: 16px;
+}
+
+/* .right-box {
+        padding-top: 46px;
+    } */
+
+.right-body {
+    background-color: #ffffff;
+
+    border-radius: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    padding-top: 24px;
+    margin-bottom: 48px;
+}
+
+#email-field {
+    background-color: #d0d5dd;
+}
+
+.form-control::placeholder {
+    color: #98a2b3;
+    opacity: 1;
 }
 
 #save-btn2 {
@@ -148,11 +140,10 @@ body {
     height: 60px;
     margin-top: 12px;
     border-radius: 16px;
+    margin-bottom: 24px;
 }
 .form-input {
     position: relative;
-    /* padding-left: 32px;
-    padding-right: 32px; */
 }
 
 #toggler {
@@ -162,7 +153,6 @@ body {
     transform: translateY(-50%);
     cursor: pointer;
     color: #6c757d;
-    /* overflow: hidden; */
 }
 #newtoggler {
     position: absolute;
@@ -171,7 +161,6 @@ body {
     transform: translateY(-50%);
     cursor: pointer;
     color: #6c757d;
-    /* overflow: hidden; */
 }
 
 #confirmtoggler {

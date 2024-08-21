@@ -1,22 +1,13 @@
 body {
     background-color: #f9fafb;
     font-family: "Inter", Arial, sans-serif;
+    margin: 0;
 }
 .my-dashboard {
     display: flex;
-    width: 1440px;
-    height: 1468px;
 }
-
-.hero {
-    display: flex;
-    width: 1280px;
-    height: 160px;
-    margin-top: 31px;
-}
-.welcome-profile {
-    width: 389px;
-    height: 126px;
+.welcome-user {
+    margin-left: 32px;
 }
 
 .welcome {
@@ -36,11 +27,11 @@ body {
     background-image: linear-gradient(to right, #ffead1, #a5d2eb);
     border-radius: 21px;
     color: #0046c4;
-    opacity: 100%;
     text-align: center;
     padding-top: 7px;
     font-size: 18px;
     font-weight: 600;
+    margin-left: 32px;
 }
 .total {
     width: 389px;
@@ -50,7 +41,6 @@ body {
     padding-right: 24px;
     border-radius: 16px;
     background-color: #ffff;
-    opacity: 100%;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     margin-right: 24px;
 }

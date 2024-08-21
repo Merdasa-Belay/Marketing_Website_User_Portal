@@ -5,13 +5,15 @@
     font-family: "inter", sans-serif, serif;
 }
 
-.navbar {
-    background-color: #ffffff;
-    height: 88px;
-    padding-right: 112px;
-    padding-left: 112px;
-}
+/* .navbar {
+    padding-left: 32px;
+    padding-right: 32px;
+} */
 
+.user-navbar {
+    padding: 0 112px;
+    background-color: #ffffff;
+}
 .nav-item {
     position: relative;
     display: grid;
@@ -21,13 +23,15 @@
     color: #344054;
 }
 .nav-item .nav-link.active {
-    width: 109px;
-    height: 40px;
-    border: 5px solid #833ab4;
-    border: double 5px transparent;
-    background-image: linear-gradient(to right, #f1c28c, #60b1df);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+    text-align: center;
+    font-size: 16x;
+    background: linear-gradient(to right, #f1c28c, #60b1df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border: 4px solid transparent;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
 #profile-pic {
