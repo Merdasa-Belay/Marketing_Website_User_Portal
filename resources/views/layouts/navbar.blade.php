@@ -42,9 +42,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
+                            <button onclick="window.location='{{ route('my_dashboard') }}'"
+                                @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
                                 Dashboard
-                            </a>
+                            </button>
+
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>

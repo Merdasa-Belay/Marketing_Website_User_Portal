@@ -21,17 +21,13 @@
     color: #344054;
 }
 .nav-item .nav-link.active {
-    background: linear-gradient(to right, #f1c28c, #60b1df);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    border-image: linear-gradient(to right, #f1c28c, #60b1df) 1;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s ease;
+    width: 109px;
     height: 40px;
+    border: 5px solid #833ab4;
+    border: double 5px transparent;
+    background-image: linear-gradient(to right, #f1c28c, #60b1df);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 #profile-pic {
