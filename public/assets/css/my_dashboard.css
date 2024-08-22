@@ -6,11 +6,121 @@
 
 .my-dashboard {
     display: grid;
-    margin-top: 32px;
+    padding-top: 32px;
+    padding-left: 112px;
+    padding-right: 112px;
+
+    background-color: #f9fafb;
+    height: 1468px;
+}
+.welcome-profile {
+    width: 331px;
+    height: 104px;
+    margin-right: 24px;
 }
 
-.welcome-profile {
-    padding-left: 32px;
-    padding-right: 32px;
-    /* margin-right: 24px; */
+.welcome {
+    font-size: 30px;
+    color: #667085;
+}
+
+.bloggs {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.profile-id {
+    width: 249px;
+    height: 42px;
+    background-image: linear-gradient(to right, #ffead1, #a5d2eb);
+    border-radius: 21px;
+    color: #0046c4;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 32px;
+}
+.total {
+    width: 370px;
+    height: 126px;
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 16px;
+    background-color: #ffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 24px;
+}
+
+.response {
+    width: 389px;
+    height: 126px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding-left: 24px;
+    padding-right: 0;
+    border-radius: 16px;
+    background-color: #ffff;
+}
+.total-dataset {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+}
+.data-number {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+}
+.total-number {
+    display: grid;
+    padding-top: 24px;
+}
+
+.data-svg {
+    align-items: center;
+    margin-top: 31px;
+    margin-right: 24px;
+    background-color: #f2f4f7;
+    width: 64px;
+    height: 64px;
+    padding: 9.5px;
+    border-radius: 12px;
+}
+
+.active-svg {
+    align-items: center;
+    margin-top: 31px;
+    margin-right: 24px;
+    background-color: #f2f4f7;
+    width: 64px;
+    height: 64px;
+    padding: 9.5px;
+    border-radius: 12px;
+}
+
+.active-response {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.subscription {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.active-number {
+    display: grid;
+    padding-top: 24px;
+}
+
+.hr {
+    height: 10px;
+    margin-top: 50px;
+    background-color: #007bff;
+    width: 1280px;
 }
