@@ -28,7 +28,7 @@ class CustomerController extends Controller
 
 
 
-        $customers = Customer::all();
+        $customer = Customer::first();
         return view('customers.index', compact('customers'));
     }
 
@@ -62,19 +62,19 @@ class CustomerController extends Controller
 
     public function myDetail()
     {
-        $customers = Customer::all();
+        $customer = Customer::first();
         $title = 'My Details';
 
-        return view('my_detail', compact('customers', 'title'));
+        return view('my_detail', compact('customer', 'title'));
     }
 
     public function myDashboard()
     {
         $title = 'My Dashboard';
-        $customers = Customer::all();
+        $customer = Customer::first();
 
 
-        return view('my_dashboard', compact('title', 'customers'));
+        return view('my_dashboard', compact('title', 'customer'));
     }
 
 
@@ -82,19 +82,19 @@ class CustomerController extends Controller
     public function myReports()
     {
         $title = 'My Reports';
-        $customers = Customer::all();
+        $customer = Customer::first();
 
 
-        return view('my_reports', compact('title', 'customers'));
+        return view('my_reports', compact('title', 'customer'));
     }
 
 
     public function myDatasets()
     {
         $title = 'My Datasets';
-        $customers = Customer::all();
+        $customer = Customer::first();
 
 
-        return view('my_datasets', compact('title', 'customers'));
+        return view('my_datasets', compact('title', 'customer'));
     }
 }

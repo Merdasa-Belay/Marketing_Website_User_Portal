@@ -27,68 +27,68 @@
 
 <body>
     {{-- Navbar --}}
-    @foreach ($customers as $customer)
-        <div class="container-fluid user-navbar">
-            <nav class="navbar navbar-expand-lg" style="background-color: #ffffff;">
-                <a class="navbar-brand" href="{{ route('my_detail') }}">
-                    <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Company Logo" width="200" height="50"
-                        class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="container-fluid user-navbar">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{{ route('my_detail') }}">
+                <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Company Logo" width="200" height="50"
+                    class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>
+                            My Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('my_reports') }}" @class(['nav-link', 'active' => request()->routeIs('my_reports')])>
+                            My Reports
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('my_datasets') }}" @class(['nav-link', 'active' => request()->routeIs('my_datasets')])>
+                            Datasets
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
-                                Dashboard
-                            </a>
+                            <a class="nav-link" href="#"><i id="toggle" class="fa-solid fa-gear"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>
-                                My Details
-                            </a>
+                            <a class="nav-link" href="#"><i id="toggle" class="fa-regular fa-bell"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_reports') }}" @class(['nav-link', 'active' => request()->routeIs('my_reports')])>
-                                My Reports
-                            </a>
+                            <a class="nav-link" href="#">{{ $customer->name }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my_datasets') }}" @class(['nav-link', 'active' => request()->routeIs('my_datasets')])>
-                                Datasets
+                            <a class="nav-link" href="#">
+                                <img id="profile-pic" src="{{ asset('assets/image/joseph.jpg') }}"
+                                    alt="Profile Picture">
                             </a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i id="toggle" class="fa-solid fa-gear"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i id="toggle" class="fa-regular fa-bell"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">{{ $customer->name }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <img id="profile-pic" src="{{ asset('assets/image/joseph.jpg') }}"
-                                        alt="Profile Picture">
-                                </a>
-                            </li>
-                        </ul>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-        <div class="container">
-            @yield('content')
-        </div>
-    @endforeach
+    <div class="container">
+    </div>
+    @yield('content')
+
 
 
     {{-- Bootstrap --}}
