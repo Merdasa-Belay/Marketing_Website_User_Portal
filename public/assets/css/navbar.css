@@ -1,19 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::after,
+*::before {
     box-sizing: border-box;
-    font-family: "inter", sans-serif, serif;
 }
 
-/* .navbar {
-    padding-left: 32px;
-    padding-right: 32px;
-} */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
 
 .user-navbar {
-    padding: 0 112px;
     background-color: #ffffff;
+    padding-left: 112px;
+    padding-right: 112px;
 }
+
 .nav-item {
     position: relative;
     display: grid;
