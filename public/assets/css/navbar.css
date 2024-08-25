@@ -1,19 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::after,
+*::before {
     box-sizing: border-box;
-    font-family: "inter", sans-serif, serif;
 }
 
-/* .navbar {
-    padding-left: 32px;
-    padding-right: 32px;
-} */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
 
 .user-navbar {
-    padding: 0 112px;
     background-color: #ffffff;
+    padding-left: 112px;
+    padding-right: 112px;
 }
+
 .nav-item {
     position: relative;
     display: grid;
@@ -23,17 +24,14 @@
     color: #344054;
 }
 .nav-item .nav-link.active {
-    text-align: center;
     font-size: 16x;
     background: linear-gradient(to right, #f1c28c, #60b1df);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    border: 4px solid transparent;
     border-radius: 6px;
     text-decoration: none;
 }
-
 #profile-pic {
     width: 40px;
     height: 40px;

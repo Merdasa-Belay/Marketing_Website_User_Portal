@@ -4,17 +4,17 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('assets/css/my_dashboard.css') }}">
 
-    <div class="my-dashboard">
+    <div class="container-fluid vh-100 my-dashboard">
 
-        <div class="hero">
+        <div class="row">
 
-            <div class="welcome-profile">
+            <div class="col-4 welcome-profile">
                 <p class="welcome">Welcome, <span class="bloggs">Joe Bloggs</span></p>
                 <p class="profile-id">
                     Profile ID: 232456789001
                 </p>
             </div>
-            <div class="total">
+            <div class="col-4 total">
                 <div class="data-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
                         fill="none">
@@ -39,7 +39,7 @@
                     </p>
                 </div>
             </div>
-            <div class="response">
+            <div class="col-4 response">
                 <div class="active-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="44" viewBox="0 0 38 44"
                         fill="none">
@@ -67,6 +67,7 @@
             </div>
         </div>
 
+
+
     </div>
-    <hr>
 @endsection

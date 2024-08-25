@@ -1,13 +1,21 @@
-body {
-    background-color: #f9fafb;
-    font-family: "Inter", Arial, sans-serif;
-    margin: 0;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
+
 .my-dashboard {
-    display: flex;
+    display: grid;
+    padding-top: 32px;
+    padding-left: 112px;
+    padding-right: 112px;
+
+    background-color: #f9fafb;
 }
-.welcome-user {
-    margin-left: 32px;
+.welcome-profile {
+    width: 331px;
+    height: 104px;
+    margin-right: 24px;
 }
 
 .welcome {
@@ -34,7 +42,7 @@ body {
     margin-left: 32px;
 }
 .total {
-    width: 389px;
+    width: 370px;
     height: 126px;
     display: flex;
     padding-left: 24px;
@@ -51,7 +59,7 @@ body {
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     padding-left: 24px;
-    padding-right: 24px;
+    padding-right: 0;
     border-radius: 16px;
     background-color: #ffff;
 }
