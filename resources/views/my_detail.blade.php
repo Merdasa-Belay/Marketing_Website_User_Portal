@@ -41,7 +41,7 @@
 
                         {{-- Full name --}}
                         <div class="form-group">
-                            <label for="fullname" id="login-name" class="form-label register-name">Full name</label>
+                            <label for="name" id="login-name" class="form-label register-name">Full name</label>
                             <input type="text" class="form-control form-placehoder" id="fullname" name="fullname"
                                 value="{{ $customer->name }}" placeholder="First and last name">
                         </div>

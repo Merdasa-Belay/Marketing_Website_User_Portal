@@ -43,7 +43,7 @@ class CustomerController extends Controller
 
         $customer = Customer::create([
             'title' => $request->title,
-            'name' => $request->fullname,
+            'name' => $request->name,
             'country' => $request->country,
             'phone' => $request->phone,
             'email' => $request->email,
@@ -96,5 +96,29 @@ class CustomerController extends Controller
 
 
         return view('my_datasets', compact('title', 'customer'));
+    }
+
+
+
+    public function edit(Customer $product)
+    {
+        //
+        return view('customer.edit', compact('customer'));
+    }
+    public function update(Request $request, Customer $customer)
+    {
+        //
+        $request->validate([
+            'title' => $request->title,
+            'name' => $request->name,
+            'country' => $request->country,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'password' => $request->password,
+            'confirmpassword' => $request->confirmpassword
+        ]);
+        // Create a new product
+        $customer->update($request->all());
+        return redirect()->route('customers.index')->with('success', 'Profile updated succesfully');
     }
 }
