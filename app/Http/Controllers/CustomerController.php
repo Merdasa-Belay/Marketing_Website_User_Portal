@@ -28,7 +28,7 @@ class CustomerController extends Controller
 
 
 
-        $customer = Customer::first();
+        $customer = Customer::all();
         return view('customers.index', compact('customers'));
     }
 
@@ -100,7 +100,7 @@ class CustomerController extends Controller
 
 
 
-    public function edit(Customer $product)
+    public function edit(Customer $customer)
     {
         //
         return view('customer.edit', compact('customer'));
@@ -109,13 +109,14 @@ class CustomerController extends Controller
     {
         //
         $request->validate([
-            'title' => $request->title,
-            'name' => $request->name,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'password' => $request->password,
-            'confirmpassword' => $request->confirmpassword
+            'title' => 'required',
+            'name' => 'required',
+            'country' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+
+            'confirmpassword' => 'required'
         ]);
         // Create a new product
         $customer->update($request->all());
