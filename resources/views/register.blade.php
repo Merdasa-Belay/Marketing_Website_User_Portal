@@ -54,9 +54,9 @@
 
             <!-- Full name -->
             <div class="form-group register-input">
-                <label for="fullname" class="form-label register-name">Full name</label>
+                <label for="name" class="form-label register-name">Full name</label>
                 <input type="text" id="fullname" class="form-control" placeholder="First and last name"
-                    name="fullname">
+                    name="name">
             </div>
 
             <!-- Select country -->

@@ -1,8 +1,25 @@
 @extends('layouts.navbar')
 
+
+
 @section('content')
     <link rel="stylesheet" href="{{ asset('assets/css/my_detail.css') }}">
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <form action="{{ route('customers.update', $customer->id) }}" method="POST">
         @csrf

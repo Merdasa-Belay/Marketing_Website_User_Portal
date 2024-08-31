@@ -13,8 +13,8 @@ class CustomerController extends Controller
     public function registration()
     {
 
-        $name = 'eyob';
-        return view('register', compact('name'));
+
+        return view('register');
     }
     public function login_page()
     {
@@ -29,7 +29,7 @@ class CustomerController extends Controller
 
 
         $customer = Customer::all();
-        return view('customers.index', compact('customers'));
+        return view('my_detail', compact('customer'));
     }
 
 
@@ -38,40 +38,78 @@ class CustomerController extends Controller
     {
         return view('register');
     }
+
     public function store(Request $request)
     {
+        //
+        // Validate the input
+        $request->validate([
+            'title' => 'required',
+            'name' => 'required',
+            'country' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'confirmpassword' => 'required',
 
-        $customer = Customer::create([
-            'title' => $request->title,
-            'name' => $request->name,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'password' => $request->password,
-            'confirmpassword' => $request->confirmpassword
+
+
+
+
         ]);
+
+        // Create a new product
+        $customer = Customer::create($request->all());
+        // redirect the user and send friendly message
 
         if ($customer) {
             return redirect('my_detail');
         }
-        return 'customer_login';
-        //
+        return 'customer-login';
     }
 
 
 
-    public function myDetail()
+
+    // Update user profile
+
+    public function update(Request $request, Customer $customer)
     {
-        $customer = Customer::first();
-        $title = 'My Details';
+        // Validation
+        $request->validate([
+            'title' => 'required',
+            'name' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'password' => 'nullable|min:8|confirmed',
+        ]);
 
-        return view('my_detail', compact('customer', 'title'));
+        // Prepare data for update
+        $updateData = $request->only(['title', 'name', 'country', 'phone', 'email']);
+
+        // If a new password is provided, hash it before saving
+        if ($request->filled('password')) {
+            $updateData['password'] = bcrypt($request->password);
+        }
+
+        // Update the customer
+        $customer->update($updateData);
+
+        // Redirect to the 'my-detail' route with a success message
+        return redirect()->route('my-detail')->with([
+            'success' => 'Details updated successfully!',
+            'title' => 'My detail'
+        ]);
     }
+
+
+
 
     public function myDashboard()
     {
         $title = 'My Dashboard';
-        $customer = Customer::first();
+        $customer = Customer::all();
 
 
         return view('my_dashboard', compact('title', 'customer'));
@@ -82,7 +120,7 @@ class CustomerController extends Controller
     public function myReports()
     {
         $title = 'My Reports';
-        $customer = Customer::first();
+        $customer = Customer::all();
 
 
         return view('my_reports', compact('title', 'customer'));
@@ -96,30 +134,5 @@ class CustomerController extends Controller
 
 
         return view('my_datasets', compact('title', 'customer'));
-    }
-
-
-
-    public function edit(Customer $customer)
-    {
-        //
-        return view('customer.edit', compact('customer'));
-    }
-    public function update(Request $request, Customer $customer)
-    {
-        //
-        $request->validate([
-            'title' => 'required',
-            'name' => 'required',
-            'country' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-
-            'confirmpassword' => 'required'
-        ]);
-        // Create a new product
-        $customer->update($request->all());
-        return redirect()->route('customers.index')->with('success', 'Profile updated succesfully');
     }
 }
