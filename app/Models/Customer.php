@@ -16,7 +16,6 @@ class Customer extends Model
         'phone',
         'email',
         'password',
-        'confirmpassword'
     ];
 
     public function properties()

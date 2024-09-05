@@ -30,7 +30,7 @@
 
     <div class="container-fluid user-navbar">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ route('my_detail') }}">
+            <a class="navbar-brand" href="{{ route('profile.detail') }}">
                 <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Company Logo" width="200" height="50"
                     class="d-inline-block align-text-top">
             </a>

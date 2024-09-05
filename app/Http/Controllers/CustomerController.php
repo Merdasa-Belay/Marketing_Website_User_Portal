@@ -2,137 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
-
-
-use Illuminate\Http\Request;
-use App\Service\CustomerServices;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
-    public function registration()
+    // Display the registration form
+    public function registration_page()
     {
-
-
-        return view('register');
+        return view('auth.register');
     }
+
+    // Display the login form
     public function login_page()
     {
-        return view('customer_login');
+        return view('auth.login');
     }
 
 
+    // Store a new user
 
-    public function index()
+    // Store a new customer
+
+
+    public function store(CustomerRequest $request)
     {
+        // Create a new user with the validated data
+        $customer = Customer::create($request->validated());
 
-
-
-        $customer = Customer::all();
-        return view('my_detail', compact('customer'));
-    }
-
-
-
-    public function create()
-    {
-        return view('register');
-    }
-
-    public function store(Request $request)
-    {
-        //
-        // Validate the input
-        $request->validate([
-            'title' => 'required',
-            'name' => 'required',
-            'country' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'confirmpassword' => 'required',
-
-
-
-
-
-        ]);
-
-        // Create a new product
-        $customer = Customer::create($request->all());
-        // redirect the user and send friendly message
-
+        // Check if the user was created successfully and redirect
         if ($customer) {
-            return redirect('my_detail');
-        }
-        return 'customer-login';
-    }
-
-
-
-
-    // Update user profile
-
-    public function update(Request $request, Customer $customer)
-    {
-        // Validation
-        $request->validate([
-            'title' => 'required',
-            'name' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
-            'email' => 'required|email|max:255',
-            'password' => 'nullable|min:8|confirmed',
-        ]);
-
-        // Prepare data for update
-        $updateData = $request->only(['title', 'name', 'country', 'phone', 'email']);
-
-        // If a new password is provided, hash it before saving
-        if ($request->filled('password')) {
-            $updateData['password'] = bcrypt($request->password);
+            return redirect()->route('auth.login')->with('success', 'Account created successfully! Please log in.');
         }
 
-        // Update the customer
-        $customer->update($updateData);
-
-        // Redirect to the 'my-detail' route with a success message
-        return redirect()->route('my-detail')->with([
-            'success' => 'Details updated successfully!',
-            'title' => 'My detail'
-        ]);
+        // If user creation fails, redirect with an error message
+        return redirect()->route('auth.register')->with('error', 'Failed to create account. Please try again.');
     }
-
-
-
-
-    public function myDashboard()
+    public function user_detail($customerId)
     {
-        $title = 'My Dashboard';
-        $customer = Customer::all();
-
-
-        return view('my_dashboard', compact('title', 'customer'));
-    }
-
-
-
-    public function myReports()
-    {
-        $title = 'My Reports';
-        $customer = Customer::all();
-
-
-        return view('my_reports', compact('title', 'customer'));
-    }
-
-
-    public function myDatasets()
-    {
-        $title = 'My Datasets';
-        $customer = Customer::first();
-
-
-        return view('my_datasets', compact('title', 'customer'));
+        $title = 'user detail';
+        $customer = Customer::findOrFail($customerId);
+        return view('profile.detail', compact('customer', 'title'));
     }
 }

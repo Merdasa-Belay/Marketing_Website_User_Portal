@@ -3,25 +3,21 @@
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
-// Registration page
-Route::get('/customer_register', [CustomerController::class, 'registration'])->name('customer.register');
-
-// Login page
-Route::get('/customer_login', [CustomerController::class, 'login_page'])->name('customer.login');
-
-// Resource routes for customers (CRUD operations)
-Route::resource('/customers', CustomerController::class);
+use App\Http\Controllers\ProfileController;
 
 
 
-// Handle update request
-Route::put('/my-detail', [CustomerController::class, 'update'])->name('customer.update');
 
-// Dashboard
-Route::get('/my-dashboard', [CustomerController::class, 'myDashboard'])->name('my_dashboard');
 
-// Reports
-Route::get('/my-reports', [CustomerController::class, 'myReports'])->name('my_reports');
 
-// Datasets
-Route::get('/my-datasets', [CustomerController::class, 'myDatasets'])->name('my_datasets');
+
+Route::get('/register', [CustomerController::class, 'registration_page'])->name('auth.register');
+Route::get('/login', [CustomerController::class, 'login_page'])->name('auth.login');
+
+
+// Define the route to handle storing a new customer
+
+Route::post('/detail', [CustomerController::class, 'store'])->name('customers.store');
+
+Route::put('/detail', [CustomerController::class, 'update'])->name('customer.update');
+Route::get('/detail/{customer}', [CustomerController::class, 'user_detail'])->name('profile.detail');

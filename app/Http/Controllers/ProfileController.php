@@ -1,60 +1,54 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\Customer;
+use App\Http\Requests\CustomerRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
+
+
+
+
+
+    public function show(Customer $customer)
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        return view('profile.detail', compact('customer'));
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+
+
+
+    // Update user profile
+    public function update(CustomerRequest $request, Customer $customer)
+    {
+        // Validate and get the data from the request
+        $validatedData = $request->validated();
+
+        // Remove the 'confirmpassword' field if present
+        unset($validatedData['confirmpassword']);
+
+        // Handle password hashing
+        if (isset($validatedData['password']) && !empty($validatedData['password'])) {
+            $validatedData['password'] = bcrypt($validatedData['password']);
+        } else {
+            // Remove the password field if it's not provided
+            unset($validatedData['password']);
         }
 
-        $request->user()->save();
+        // Update the customer with the validated data
+        $updateSuccessful = $customer->update($validatedData);
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
+        // Redirect based on the update result
+        if ($updateSuccessful) {
+            return redirect()->route('profile.show')->with('success', 'Profile updated successfully!');
+        }
 
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        return redirect()->route('profile.show')->with('error', 'Failed to update profile. Please try again.');
     }
 }

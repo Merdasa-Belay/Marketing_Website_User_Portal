@@ -20,7 +20,6 @@ return new class extends Migration
             $table->text('phone');
             $table->text('email');
             $table->text('password');
-            $table->text('confirmpassword');
 
             $table->timestamps();
         });
