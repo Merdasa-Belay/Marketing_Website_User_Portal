@@ -30,8 +30,8 @@
 
     <div class="container-fluid user-navbar">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ route('profile.detail') }}">
-                <img src="{{ asset('assets/image/dascena.jpg') }}" alt="Company Logo" width="200" height="50"
+            <a class="navbar-brand" href="{{ route('customers.show', ['customer' => $customer->id]) }}">
+                <img src="{{ asset('assets/image/dascena.png') }}" alt="Company Logo" width="200" height="50"
                     class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,22 +42,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{ route('my_dashboard') }}" @class(['nav-link', 'active' => request()->routeIs('my_dashboard')])>
+                        <a href="{{ route('customers.index') }}" @class([
+                            'nav-link',
+                            'active' => request()->routeIs('customers.index'),
+                        ])>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('my_detail') }}" @class(['nav-link', 'active' => request()->routeIs('my_detail')])>
+                        <a href="{{ route('customers.show', ['customer' => $customer]) }}" @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
                             My Details
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('my_reports') }}" @class(['nav-link', 'active' => request()->routeIs('my_reports')])>
+                        <a href="{{ route('report') }}" @class(['nav-link', 'active' => request()->routeIs('report')])>
                             My Reports
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('my_datasets') }}" @class(['nav-link', 'active' => request()->routeIs('my_datasets')])>
+                        <a href="{{ route('dataset') }}" @class(['nav-link', 'active' => request()->routeIs('dataset')])>
                             Datasets
                         </a>
                     </li>
@@ -71,7 +74,7 @@
                             <a class="nav-link" href="#"><i id="toggle" class="fa-regular fa-bell"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ $customer->name }}</a>
+                            <a class="nav-link" href="#"></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">

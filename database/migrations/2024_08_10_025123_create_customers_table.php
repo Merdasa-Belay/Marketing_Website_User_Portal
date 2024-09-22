@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('title');
 
-            $table->text('name');
+            $table->text('fullname');
             $table->text('country');
             $table->text('phone');
             $table->text('email');

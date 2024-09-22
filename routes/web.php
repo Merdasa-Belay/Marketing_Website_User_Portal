@@ -1,23 +1,25 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CustomerController;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProfileController;
+// registration route
+Route::get('/register', [AuthController::class, 'registration'])->name('register');
+
+// login route
+Route::get('login', [AuthController::class, 'login'])->name('login');
 
 
+Route::resource('/customers', CustomerController::class);
+// registration post route
+Route::post('register', [AuthController::class, 'registrationPost']);
+
+Route::get('/report', [CustomerController::class, 'myReport'])->name('report');
+
+Route::get('/dataset', [CustomerController::class, 'myDataset'])->name('dataset');
 
 
-
-
-
-Route::get('/register', [CustomerController::class, 'registration_page'])->name('auth.register');
-Route::get('/login', [CustomerController::class, 'login_page'])->name('auth.login');
-
-
-// Define the route to handle storing a new customer
-
-Route::post('/detail', [CustomerController::class, 'store'])->name('customers.store');
-
-Route::put('/detail', [CustomerController::class, 'update'])->name('customer.update');
-Route::get('/detail/{customer}', [CustomerController::class, 'user_detail'])->name('profile.detail');
+// Route for updating customer password
+Route::put('/customers/{customer}/password', [CustomerController::class, 'updatePassword'])->name('customers.updatePassword');

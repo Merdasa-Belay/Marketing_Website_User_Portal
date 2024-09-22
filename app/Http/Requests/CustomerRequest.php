@@ -23,11 +23,11 @@ class CustomerRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'name' => 'required',
+            'fullname' => 'required',
             'country' => 'required',
             'phone' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required|email',
+            'password' => 'nullable'
         ];
     }
 }

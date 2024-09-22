@@ -18,51 +18,57 @@
 </head>
 
 <body>
-    {{-- Datadudu logo --}}
+    {{--  logo --}}
     <div class="logo-image mb-3">
-        <img src="{{ asset('assets/image/DataDudu_3.png') }}" class="img-fluid" style="height: 56px" ">
+        <img src="{{ asset('assets/image/dascena.png') }}" class="img-fluid" style="height: 56px">
     </div>
 
     {{-- login form --}}
-     <div class="login-form d-grid justify-center align-items-center">
-        {{-- login header --}}
-        <div class="login">
-            <p class="text-black login-header">Login</p>
-            <span id="login-message">Login securely to your account.</span>
+    <form action="{{ route('login') }}" method="POST">
+        @csrf
+        <div class="login-form d-grid justify-center align-items-center">
+            {{-- login header --}}
+            <div class="login">
+                <p class="text-black login-header">Login</p>
+                <span id="login-message">Login securely to your account.</span>
+            </div>
+
+            <div class="login-forms">
+                <!--Email address  -->
+                <div id="login-input" class="form-group">
+                    <label id="login-name" class="form-label">Email address</label>
+
+
+                    <input type="text" class="form-control" name="email" aria-describedby="passwordHelpBlock"
+                        placeholder="Email address">
+
+                </div>
+                <!--  Password -->
+                <div class="form-group password-container">
+                    <label id="login-name" for="inputPassword5" class="form-label">Password <span
+                            id="forget-password">Forgot password</span></label>
+
+                    <input type="password" class="form-control" name="password" aria-describedby="passwordHelpBlock"
+                        required>
+
+                    <i id="toggler"class=" far fa-eye"></i>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="agreement">By logging in, you agree to DataDudu <span id='terms-policy'>Terms and Privacy
+                    Policy.</span>
+            </div>
+            {{-- Login button --}}
+
+            <button id="login-btn" type="submit" class="btn btn-primary">Login to your account</button>
         </div>
 
-        <div class="login-forms">
-<!--Email address  -->
-<div id="login-input" class="form-group">
-    <label id="login-name" class="form-label">Email address</label>
-
-
-    <input type="text" class="form-control" aria-describedby="passwordHelpBlock"
-        placeholder="Email address">
-
-</div>
- <!--  Password -->
- <div class="form-group password-container">
-    <label id="login-name" for="inputPassword5" class="form-label">Password <span id="forget-password">Forgot password</span></label>
-
-    <input type="password" class="form-control" aria-describedby="passwordHelpBlock" required>
-
-    <i id="toggler"class=" far fa-eye"></i>
-
-
-    </div>
-
-
-    </div>
-
-    <div class="agreement">By logging in, you agree to DataDudu <span id='terms-policy'>Terms and Privacy Policy.</span>
-    </div>
-    {{-- Login button --}}
-
-    <button id="login-btn" type="button" class="btn btn-primary">Login to your account</button>
-    </div>
-
-    <p class="new-user">New to DataDudu? <a id="register-link" href="/customer_register">Register</a>
+    </form>
+    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register') }}">Register</a>
     </p>
 
 

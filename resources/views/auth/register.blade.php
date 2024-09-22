@@ -21,7 +21,7 @@
 <body>
     <!-- Datadudu image -->
     <div id="image-dudu">
-        <img id="datadudu-image" src="{{ asset('assets/image/dascena.jpg') }}" alt="">
+        <img id="datadudu-image" src="{{ asset('assets/image/dascena.png') }}" alt="">
     </div>
 
 
@@ -54,9 +54,9 @@
 
             <!-- Full name -->
             <div class="form-group register-input">
-                <label for="name" class="form-label register-name">Full name</label>
+                <label for="fullname" class="form-label register-name">Full name</label>
                 <input type="text" id="fullname" class="form-control" placeholder="First and last name"
-                    name="name">
+                    name="fullname">
             </div>
 
             <!-- Select country -->
@@ -111,7 +111,7 @@
 
         <!-- Login link -->
         <div class="login">Already have an account?
-            <a id="login-link" href="/customer_login">Login</a>
+            <a id="login-link" href="{{ route('login') }}">Login</a>
         </div>
     </form>
 

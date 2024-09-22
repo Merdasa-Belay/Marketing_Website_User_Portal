@@ -11,13 +11,17 @@ class Customer extends Model
 
     protected $fillable = [
         'title',
-        'name',
+        'fullname',
         'country',
         'phone',
         'email',
         'password',
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
     public function properties()
     {
         return $this->hasMany(Property::class);
