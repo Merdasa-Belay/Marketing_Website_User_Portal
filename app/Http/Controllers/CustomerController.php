@@ -96,7 +96,7 @@ class CustomerController extends Controller
         // Validate the request
         $request->validate([
             'currentpassword' => 'required',
-            'newpassword' => 'required|min:8|confirmed', // ensures newpassword and confirmpassword match
+            'newpassword' => 'required|min:8|confirmed',
         ]);
 
         // Find the customer
@@ -104,6 +104,7 @@ class CustomerController extends Controller
 
         // Check if the current password is correct
         if (!Hash::check($request->currentpassword, $customer->password)) {
+            // Redirect back with an error message
             return redirect()->back()->withErrors(['currentpassword' => 'Current password is incorrect.']);
         }
 
@@ -113,6 +114,7 @@ class CustomerController extends Controller
 
         return redirect()->back()->with('success', 'Password updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
