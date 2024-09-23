@@ -14,16 +14,16 @@ class AuthController extends Controller
 {
     //
 
+    // Show registration form
     public function registration()
     {
         return view('auth.register');
     }
-
+    // show login form
     public function showLoginForm()
     {
         return view('auth.login');
     }
-
 
     public function login(Request $request)
     {
@@ -40,15 +40,16 @@ class AuthController extends Controller
         // Check if customer exists and verify password
         if ($customer && Hash::check($request->password, $customer->password)) {
             // Log the customer in with remember option
-            Auth::login($customer, $request->remember); // Add the remember parameter
+            Auth::login($customer, $request->remember);
 
-            // Redirect to intended page
-            return redirect()->intended('customer.show'); // Ensure this route exists
+
+            return redirect()->intended(route('customers.dashboard', ['customer' => $customer->id]));
         }
 
-        // If authentication fails, redirect back with an error message
+
+        // Redirect back with an error message if credentials are invalid
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
-        ]);
+        ])->withInput($request->only('email')); // Preserves the email input
     }
 }

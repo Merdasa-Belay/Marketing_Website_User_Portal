@@ -44,15 +44,20 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a href="{{ route('customers.dashboard', ['customer' => $customer->id]) }}"
-                            @class(['nav-link', 'active' => request()->routeIs('dashboard')])>
+                            @class([
+                                'nav-link',
+                                'active' => request()->routeIs('customers.dashboard'),
+                            ])>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('customers.show', ['customer' => $customer]) }}" @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
+                        <a href="{{ route('customers.show', ['customer' => $customer->id]) }}"
+                            @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
                             My Details
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a href="{{ route('report') }}" @class(['nav-link', 'active' => request()->routeIs('report')])>
                             My Reports

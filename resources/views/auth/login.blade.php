@@ -68,7 +68,7 @@
         </div>
 
     </form>
-    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register') }}">Register</a>
+    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register.create') }}">Register</a>
     </p>
 
 

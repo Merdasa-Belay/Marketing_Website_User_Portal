@@ -26,7 +26,7 @@
 
 
     <!-- Register form -->
-    <form method="GET" action="{{ route('customers.store') }}">
+    <form method="POST" action="{{ route('customers.store') }}">
         @csrf
 
         {{-- Header --}}

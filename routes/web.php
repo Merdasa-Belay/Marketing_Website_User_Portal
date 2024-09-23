@@ -5,8 +5,12 @@ use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
-// registration route
-Route::get('/register', [AuthController::class, 'registration'])->name('register');
+// Show registration form route
+Route::get('/register', [AuthController::class, 'registration'])->name('register.create');
+
+// Handle registration form submission
+Route::post('/register', [AuthController::class, 'registrationPost'])->name('register.store');
+
 // Route for login page (GET request)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.show');
 
@@ -14,8 +18,6 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.show
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::resource('/customers', CustomerController::class);
-// registration post route
-Route::post('register', [AuthController::class, 'registrationPost']);
 
 // route for customer dashboard
 

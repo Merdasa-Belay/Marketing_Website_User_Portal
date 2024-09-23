@@ -6,6 +6,8 @@ use App\Models\Customer;
 use App\Http\Requests\CustomerRequest; // Ensure to import your CustomerRequest
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Auth\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -35,6 +37,7 @@ class CustomerController extends Controller
 
     public function store(CustomerRequest $request)
     {
+        // Creating a new customer
         $customer = Customer::create([
             'title' => $request->title,
             'fullname' => $request->fullname,
@@ -44,9 +47,14 @@ class CustomerController extends Controller
             'password' => bcrypt($request->password), // Hash the password
         ]);
 
-        return redirect()->route('customers.show', ['customer' => $customer->id])
-            ->with('success', 'Customer created successfully!');
+        // Automatically log the customer in
+        Auth::login($customer);
+
+        // Redirect to the login page
+        return redirect()->route('login.show') // Change to your login route name
+            ->with('success', 'Registration successful! You are now logged in.');
     }
+
 
 
 
@@ -134,7 +142,7 @@ class CustomerController extends Controller
 
     public function myDashboard(Customer $customer)
     {
-        $title = 'Customer';
+        $title = 'Dashboard';
         return view('customers.dashboard', compact('customer', 'title'));
     }
 
