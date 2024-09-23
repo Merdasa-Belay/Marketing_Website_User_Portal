@@ -57,7 +57,7 @@ class CustomerController extends Controller
     public function show(Customer $customer)
     {
         $title = 'detail';
-
+        $customer = Customer::findOrFail($customer->id);
         return view('customers.detail', compact('customer', 'title'));
     }
 
@@ -131,6 +131,12 @@ class CustomerController extends Controller
 
 
 
+
+    public function myDashboard(Customer $customer)
+    {
+        $title = 'Customer';
+        return view('customers.dashboard', compact('customer', 'title'));
+    }
 
     public function myDataset(string $id)
     {

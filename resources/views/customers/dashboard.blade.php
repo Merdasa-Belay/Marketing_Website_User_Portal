@@ -1,6 +1,7 @@
 @extends('layouts.navbar')
 
 
+
 @section('content')
     <link rel="stylesheet" href="{{ asset('assets/css/my_dashboard.css') }}">
 

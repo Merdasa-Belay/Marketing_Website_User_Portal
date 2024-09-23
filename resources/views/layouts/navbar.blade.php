@@ -28,6 +28,7 @@
 <body>
     {{-- Navbar --}}
 
+
     <div class="container-fluid user-navbar">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="{{ route('customers.show', ['customer' => $customer->id]) }}">
@@ -42,10 +43,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{ route('customers.index') }}" @class([
-                            'nav-link',
-                            'active' => request()->routeIs('customers.index'),
-                        ])>
+                        <a href="{{ route('customers.dashboard', ['customer' => $customer->id]) }}"
+                            @class(['nav-link', 'active' => request()->routeIs('dashboard')])>
                             Dashboard
                         </a>
                     </li>
