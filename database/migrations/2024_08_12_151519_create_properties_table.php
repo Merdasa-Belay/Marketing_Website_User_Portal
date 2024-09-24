@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
             $table->text('name');
             $table->text('description');
             $table->float('price');
             $table->timestamps();
-            $table->foreign("customer_id")->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CustomerController;
-use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 // Show registration form route
@@ -19,9 +18,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::resource('/customers', CustomerController::class);
 
-// route for customer dashboard
+
+
+// Route for customer dashboard
 
 Route::get('customers/{customer}/dashboard', [CustomerController::class, 'myDashboard'])->name('customers.dashboard');
+
 
 // Route for customer report
 

@@ -19,7 +19,7 @@ class AuthController extends Controller
     {
         return view('auth.register');
     }
-    // show login form
+
     public function showLoginForm()
     {
         return view('auth.login');
@@ -31,21 +31,20 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'remember' => 'nullable|boolean', // Add this line
+            'remember' => 'nullable|boolean',
         ]);
 
-        // Fetch the customer by email
-        $customer = Customer::where('email', $request->email)->first();
+        // Specify the correct guard (if using a custom guard, e.g., 'customer')
+        $credentials = $request->only('email', 'password');
 
-        // Check if customer exists and verify password
-        if ($customer && Hash::check($request->password, $customer->password)) {
-            // Log the customer in with remember option
-            Auth::login($customer, $request->remember);
+        // Attempt to log the customer in with the provided credentials and remember option
+        if (Auth::guard('customer')->attempt($credentials, $request->remember)) {
+            // Get the authenticated customer
+            $customer = Auth::guard('customer')->user();
 
-
+            // Redirect to the intended page or to the customer dashboard
             return redirect()->intended(route('customers.dashboard', ['customer' => $customer->id]));
         }
-
 
         // Redirect back with an error message if credentials are invalid
         return back()->withErrors([

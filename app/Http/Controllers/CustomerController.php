@@ -7,6 +7,7 @@ use App\Http\Requests\CustomerRequest; // Ensure to import your CustomerRequest
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Auth\AuthController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
@@ -77,14 +78,14 @@ class CustomerController extends Controller
     {
         $title = 'Customer';
 
-        $customer = Customer::findOrFail($id);
+        $customer = User::findOrFail($id);
         return view('customers.edit', compact('customer', 'title'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CustomerRequest $request, Customer $customer)
+    public function update(CustomerRequest $request, User $customer)
     {
         $customer->update([
             'title' => $request->title,
@@ -108,7 +109,7 @@ class CustomerController extends Controller
         ]);
 
         // Find the customer
-        $customer = Customer::findOrFail($id);
+        $customer = User::findOrFail($id);
 
         // Check if the current password is correct
         if (!Hash::check($request->currentpassword, $customer->password)) {
