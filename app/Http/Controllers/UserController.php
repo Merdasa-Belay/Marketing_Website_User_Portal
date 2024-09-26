@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Models\Customer;
 use App\Http\Requests\CustomerRequest; // Ensure to import your CustomerRequest
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class CustomerController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,10 +37,10 @@ class CustomerController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(CustomerRequest $request)
+    public function store(RegisterRequest $request)
     {
         // Creating a new customer
-        $customer = Customer::create([
+        $customer = User::create([
             'title' => $request->title,
             'fullname' => $request->fullname,
             'country' => $request->country,
@@ -63,10 +64,10 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Customer $customer)
+    public function show(User $user)
     {
         $title = 'detail';
-        $customer = Customer::findOrFail($customer->id);
+        $User = User::findOrFail($user->id);
         return view('customers.detail', compact('customer', 'title'));
     }
 
@@ -85,9 +86,9 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CustomerRequest $request, User $customer)
+    public function update(RegisterRequest $request, User $user)
     {
-        $customer->update([
+        $user->update([
             'title' => $request->title,
             'fullname' => $request->fullname,
             'country' => $request->country,
@@ -96,7 +97,7 @@ class CustomerController extends Controller
             'password' => bcrypt($request->password), // Hash the password
         ]);
 
-        return redirect()->route('customers.show', ['customer' => $customer->id])
+        return redirect()->route('customers.show', ['customer' => $user->id])
             ->with('success', 'Customer updated successfully!');
     }
 
@@ -130,7 +131,7 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = User::findOrFail($id);
         $customer->delete();
 
         return redirect()->route('customers.index')->with('success', 'Customer deleted successfully!');
@@ -141,7 +142,7 @@ class CustomerController extends Controller
 
 
 
-    public function myDashboard(Customer $customer)
+    public function myDashboard(User $user)
     {
         $title = 'Dashboard';
         return view('customers.dashboard', compact('customer', 'title'));
@@ -149,7 +150,7 @@ class CustomerController extends Controller
 
     public function myDataset(string $id)
     {
-        $customer = Customer::findOrFail($id);
+        $user = User::findOrFail($id);
         $title = 'Customer';
 
         return view('customers.dataset', compact('customer', 'title'));
@@ -157,8 +158,8 @@ class CustomerController extends Controller
 
     public function myReport(string $id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = User::findOrFail($id);
         $title = 'Customers';
-        return view('customers.report', compact('customer', 'title'));
+        return view('customers.report', compact('user', 'title'));
     }
 }

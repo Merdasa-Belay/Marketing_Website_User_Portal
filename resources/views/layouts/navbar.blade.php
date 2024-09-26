@@ -31,7 +31,8 @@
 
     <div class="container-fluid user-navbar">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ route('customers.show', ['customer' => $customer->id]) }}">
+
+            <a class="navbar-brand" href="{{ route('detail.show', ['user' => $user->id]) }}">
                 <img src="{{ asset('assets/image/dascena.png') }}" alt="Company Logo" width="200" height="50"
                     class="d-inline-block align-text-top">
             </a>
@@ -43,17 +44,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{ route('customers.dashboard', ['customer' => $customer->id]) }}"
-                            @class([
-                                'nav-link',
-                                'active' => request()->routeIs('customers.dashboard'),
-                            ])>
+                        <a href="{{ route('dashboard', ['user' => $user->id]) }}" @class(['nav-link', 'active' => request()->routeIs('dashboard')])>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('customers.show', ['customer' => $customer->id]) }}"
-                            @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
+                        <a href="{{ route('detail.show', ['user' => $user->id]) }}" @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
                             My Details
                         </a>
                     </li>

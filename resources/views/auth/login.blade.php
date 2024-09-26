@@ -24,7 +24,7 @@
     </div>
 
     {{-- login form --}}
-    <form action="{{ route('login.submit') }}" method="POST">
+    <form action="{{ route('login') }}" method="POST">
         @csrf
         <div class="login-form d-grid justify-center align-items-center">
             {{-- login header --}}
@@ -68,7 +68,7 @@
         </div>
 
     </form>
-    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register.create') }}">Register</a>
+    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register') }}">Register</a>
     </p>
 
 

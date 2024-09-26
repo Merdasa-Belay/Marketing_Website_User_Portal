@@ -26,7 +26,7 @@
 
 
     <!-- Register form -->
-    <form method="POST" action="{{ route('customers.store') }}">
+    <form method="POST" action="{{ route('register') }}">
         @csrf
 
         {{-- Header --}}
@@ -111,7 +111,7 @@
 
         <!-- Login link -->
         <div class="login">Already have an account?
-            <a id="login-link" href="{{ route('login.show') }}">Login</a>
+            <a id="login-link" href="{{ route('login') }}">Login</a>
         </div>
     </form>
 
