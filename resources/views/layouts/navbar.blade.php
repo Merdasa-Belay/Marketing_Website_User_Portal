@@ -82,6 +82,17 @@
                                     alt="Profile Picture">
                             </a>
                         </li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        </form>
+
+                        <a href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        </form>
+
                     </ul>
                 </ul>
             </div>

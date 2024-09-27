@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
-
-
-
 {
+    // Applying the auth middleware in the constructor
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    // Index method for displaying the dashboard
     public function index(Request $request)
     {
-        if ($request->user()) {
-            // User is authenticated
-            $user = $request->user(); // Retrieve the authenticated user
-            $title = 'Dashboard';
-            return view('user.dashboard', compact('user', 'title'));
-        } else {
-            // User is not authenticated
-            return redirect()->route('login');
-        }
+        // User is guaranteed to be authenticated here
+        $user = $request->user(); // Retrieve the authenticated user
+        $title = 'Dashboard';
+
+        // Pass the user and title to the view
+        return view('user.dashboard', compact('user', 'title'));
     }
 }
