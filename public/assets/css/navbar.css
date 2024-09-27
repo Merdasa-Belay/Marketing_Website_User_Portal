@@ -17,21 +17,26 @@ body {
 
 .nav-item {
     position: relative;
+    height: 40px;
     display: grid;
     align-items: center;
-    font-size: 16px;
     font-weight: 700;
     color: #344054;
 }
 .nav-item .nav-link.active {
-    font-size: 16x;
+    font-size: 16px;
+    height: 40px;
     background: linear-gradient(to right, #f1c28c, #60b1df);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     border-radius: 6px;
     text-decoration: none;
+
+    border: 2px solid transparent;
+    border-color: #60b1df;
 }
+
 #profile-pic {
     width: 40px;
     height: 40px;

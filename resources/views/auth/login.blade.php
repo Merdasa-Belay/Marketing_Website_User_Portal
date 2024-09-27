@@ -59,7 +59,7 @@
 
             </div>
 
-            <div class="agreement">By logging in, you agree to DataDudu <span id='terms-policy'>Terms and Privacy
+            <div class="agreement">By logging in, you agree to dascena <span id='terms-policy'>Terms and Privacy
                     Policy.</span>
             </div>
             {{-- Login button --}}
@@ -68,7 +68,7 @@
         </div>
 
     </form>
-    <p class="new-user">New to DataDudu? <a id="register-link" href="{{ route('register') }}">Register</a>
+    <p class="new-user">New to dascena? <a id="register-link" href="{{ route('register') }}">Register</a>
     </p>
 
 
