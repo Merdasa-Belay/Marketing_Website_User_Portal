@@ -7,9 +7,16 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    public function show(User $user) // Route model binding
+    public function show(Request $request)
     {
-        $title = 'Report';
-        return view('user.reports', compact('user', 'title'));
+        if ($request->user()) {
+            // User is authenticated
+            $user = $request->user(); // Retrieve the authenticated user
+            $title = 'Report';
+            return view('user.reports', compact('user', 'title'));
+        } else {
+            // User is not authenticated
+            return redirect()->route('login');
+        }
     }
 }

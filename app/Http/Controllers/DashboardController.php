@@ -10,14 +10,16 @@ class DashboardController extends Controller
 
 
 {
-    // public function index()
-    // {
-    //     $title = 'Dashboard';
-    //     return view('user.dashboard', compact('title'));
-    // }
-    public function show(User $user)
+    public function index(Request $request)
     {
-        $title = 'Dashboard';
-        return view('user.dashboard', compact('user', 'title'));
+        if ($request->user()) {
+            // User is authenticated
+            $user = $request->user(); // Retrieve the authenticated user
+            $title = 'Dashboard';
+            return view('user.dashboard', compact('user', 'title'));
+        } else {
+            // User is not authenticated
+            return redirect()->route('login');
+        }
     }
 }

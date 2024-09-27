@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 class DatasetController extends Controller
 {
     //
-
-    public function index()
+    public function index(Request $request)
     {
-        $title = 'Dataset';
-        return view('user.dataset', compact('title'));
-    }
-
-    public function show(User $user)
-    {
-        $title = 'Dataset';
-        return view('user.dataset', compact('title', 'user'));
+        if ($request->user()) {
+            // User is authenticated
+            $user = $request->user(); // Retrieve the authenticated user
+            $title = 'Dataset';
+            return view('user.datasets', compact('user', 'title'));
+        } else {
+            // User is not authenticated
+            return redirect()->route('login');
+        }
     }
 }

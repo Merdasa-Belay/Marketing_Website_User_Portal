@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class DetailController extends Controller
 {
+
+
+
     public function show(User $user)
     {
         $title = 'Detail';
