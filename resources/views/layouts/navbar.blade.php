@@ -67,14 +67,35 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i id="toggle" class="fa-solid fa-gear"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i id="toggle" class="fa-solid fa-gear"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+                                <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
                         </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i id="toggle" class="fa-regular fa-bell"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
+                            <a class="nav-link" href="#">{{ $user->fullname }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
@@ -83,15 +104,7 @@
                             </a>
                         </li>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                        </form>
 
-                        <a href="#"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-                        </form>
 
                     </ul>
                 </ul>
