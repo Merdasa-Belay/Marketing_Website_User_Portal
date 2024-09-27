@@ -20,7 +20,7 @@
 <body>
     {{--  logo --}}
     <div class="logo-image mb-3">
-        <img src="{{ asset('assets/image/dascena.png') }}" class="img-fluid" style="height: 56px">
+        <img src="{{ asset('assets/profile_pic/dascena.png') }}" class="img-fluid" style="height: 56px">
     </div>
 
     {{-- login form --}}
@@ -48,10 +48,10 @@
                     <label id="login-name" for="inputPassword5" class="form-label">Password <span
                             id="forget-password">Forgot password</span></label>
 
-                    <input type="password" class="form-control" name="password" aria-describedby="passwordHelpBlock"
-                        required>
+                    <input id="password" type="password" class="form-control" name="password"
+                        aria-describedby="passwordHelpBlock" required>
 
-                    <i id="toggler"class=" far fa-eye"></i>
+                    <i onclick="showPassword()" id="toggler"class=" far fa-eye"></i>
 
 
                 </div>
@@ -76,5 +76,7 @@
 
 
 </body>
+
+<script src="{{ asset('assets/js/login.js') }}"></script>
 
 </html>

@@ -21,7 +21,7 @@
 <body>
     <!-- Datadudu image -->
     <div id="image-dudu">
-        <img id="datadudu-image" src="{{ asset('assets/image/dascena.png') }}" alt="">
+        <img id="datadudu-image" src="{{ asset('assets/profile_pic/dascena.png') }}" alt="">
     </div>
 
 
