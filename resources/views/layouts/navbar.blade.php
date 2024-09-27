@@ -32,7 +32,7 @@
     <div class="container-fluid user-navbar">
         <nav class="navbar navbar-expand-lg">
 
-            <a class="navbar-brand" href="{{ route('detail.show', ['user' => $user->id]) }}">
+            <a class="navbar-brand" href="{{ route('detail.show', ['user' => $user]) }}">
                 <img src="{{ asset('assets/image/dascena.png') }}" alt="Company Logo" width="200" height="50"
                     class="d-inline-block align-text-top">
             </a>
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('detail.show', ['user' => $user->id]) }}" @class(['nav-link', 'active' => request()->routeIs('customers.show')])>
+                        <a href="{{ route('detail.show', ['user' => $user->id]) }}" @class(['nav-link', 'active' => request()->routeIs('detail.show')])>
                             My Details
                         </a>
                     </li>

@@ -14,9 +14,17 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard');
+
+Route::get('/detail/{user}', [DetailController::class, 'show'])->name('detail.show');
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail.show');
+Route::put('/user/update/{user}', [DetailController::class, 'update'])->name('user.update');
+Route::put('/user/updatePassword/{user}', [DetailController::class, 'updatePassword'])->name('user.updatePassword');
+
+
+
+
 Route::get('/dataset', [DatasetController::class, 'index'])->name('dataset');
-Route::get('/report', [ReportController::class, 'index'])->name('report');
+
+Route::get('/report', [ReportController::class, 'show'])->name('report');

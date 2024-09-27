@@ -22,7 +22,7 @@ class AuthController extends Controller
         $validated['password'] = Hash::make($validated['password']);
         $user = User::create($validated);
         Auth::login($user);
-        return redirect()->intended('/dashboard'); // Or your desired redirect
+        return redirect()->route('detail.show', ['user' => $user->id]);
     }
 
     public function login()
@@ -38,15 +38,22 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
+        // Attempt to log in the user
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard'); // Or your desired redirect
+
+            // Get the authenticated user
+            $user = Auth::user();
+
+            // Redirect to the user detail page with the user ID
+            return redirect()->route('detail.show', ['user' => $user->id]);
         }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+
 
     public function logout(Request $request)
     {
