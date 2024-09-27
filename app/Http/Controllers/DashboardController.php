@@ -8,10 +8,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     // Applying the auth middleware in the constructor
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     // Index method for displaying the dashboard
     public function index(Request $request)

@@ -17,21 +17,32 @@
                     <p id="update-message">Update your personal details here.</p>
                 </div>
 
-                <form action="{{ route('user.update', ['user' => $user->id]) }}" method="POST"
-                    enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
 
 
-                    <div class="left-body">
-                        {{-- profile picture --}}
+
+                <div class="left-body">
+                    {{-- profile picture --}}
+                    <form action="{{ route('profile.uploadPicture', $user) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
                         <div class="profile-picture">
-                            <img id="pic-edit" src="{{ asset('assets/image/joseph.jpg') }}" alt="Profile Picture">
+                            <img id="pic-edit"
+                                src="{{ $user->profile_picture ? asset('assets/profile_pic/' . $user->profile_picture) : asset('assets/profile_pic/default.jpg') }}"
+                                alt="Profile Picture">
                             <div class="change-pic">
                                 <i class="fa fa-camera camera-plus"></i>
                             </div>
-                            <a class="change" href="#">Change</a>
+                            <a class="change" href="#" onclick="changePicture()">Change</a>
+                            <input type="file" id="profile-pic-upload" name="profile_picture" style="display: none;"
+                                accept="image/*" onchange="this.form.submit()">
+
                         </div>
+
+                    </form>
+                    <form action="{{ route('user.update', ['user' => $user->id]) }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
 
                         {{-- title --}}
                         <select class="form-select form-select-lg mb-3 name-title" aria-label="Select title" name="title">
@@ -73,7 +84,7 @@
 
                         {{-- Save Changes button --}}
                         <button id="save-btn1" type="submit" class="btn btn-primary">Save Changes</button>
-                    </div>
+                </div>
                 </form>
             </div>
 

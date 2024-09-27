@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail/{user}', [DetailController::class, 'show'])->name('detail.show');
     Route::put('/user/update/{user}', [DetailController::class, 'update'])->name('user.update');
     Route::put('/user/updatePassword/{user}', [DetailController::class, 'updatePassword'])->name('user.updatePassword');
+    Route::put('/profile/{user}/upload-picture', [DetailController::class, 'uploadProfilePicture'])->name('profile.uploadPicture');
+
 
     Route::get('/dataset', [DatasetController::class, 'index'])->name('dataset');
 

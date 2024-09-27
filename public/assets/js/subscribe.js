@@ -36,6 +36,12 @@ function currentPassword () {
     }
   }
   
+
+  function changePicture () {
+    document.getElementById('profile-pic-upload').click();
+    
+  }
+  
   
   
   

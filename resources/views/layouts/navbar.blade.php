@@ -33,8 +33,11 @@
         <nav class="navbar navbar-expand-lg">
 
             <a class="navbar-brand" href="{{ route('detail.show', ['user' => $user->id]) }}">
-                <img src="{{ asset('assets/image/dascena.png') }}" alt="Company Logo" width="200" height="50"
-                    class="d-inline-block align-text-top">
+                <img src="{{ asset('assets/profile_pic/dascena.png') }}" alt="Company Logo" width="200"
+                    height="50" class="d-inline-block align-text-top">
+
+
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -99,7 +102,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <img id="profile-pic" src="{{ asset('assets/image/joseph.jpg') }}"
+                                <img id="profile-pic"
+                                    src="{{ $user->profile_picture ? asset('assets/profile_pic/' . $user->profile_picture) : asset('assets/profile_pic/default.jpg') }}"
                                     alt="Profile Picture">
                             </a>
                         </li>

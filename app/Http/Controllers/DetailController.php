@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 
 class DetailController extends Controller
 {
@@ -64,5 +67,32 @@ class DetailController extends Controller
         // Redirect to a specific route after successful update
         return redirect()->route('detail.show', ['user' => $user->id])
             ->with('success', 'Password updated successfully.');
+    }
+
+
+
+    public function uploadProfilePicture(Request $request)
+    {
+        // Check if the user is authenticated
+        if ($user = $request->user()) {
+            // Validate the request
+            $request->validate([
+                'profile_picture' => 'required|image',
+            ]);
+
+            // Handle the file upload
+            $profilePicture = $request->file('profile_picture');
+            $filename = time() . '.' . $profilePicture->getClientOriginalExtension();
+            $profilePicture->move(public_path('assets/profile_pic'), $filename);
+
+            // Update the user's profile picture
+            $user->update(['profile_picture' => $filename]);
+
+            // Redirect back with a success message
+            return redirect()->back()->with('success', 'Profile picture updated successfully!');
+        } else {
+            // User is not authenticated
+            return redirect()->route('login')->withErrors('You need to be logged in to upload a profile picture.');
+        }
     }
 }
