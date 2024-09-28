@@ -22,6 +22,8 @@
     <div class="logo-image mb-3">
         <img src="{{ asset('assets/profile_pic/dascena.png') }}" class="img-fluid" style="height: 56px">
     </div>
+    @include('layouts.alert')
+
 
     {{-- login form --}}
     <form action="{{ route('login') }}" method="POST">
