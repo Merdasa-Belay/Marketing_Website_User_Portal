@@ -11,8 +11,12 @@ body {
 
 .user-navbar {
     background-color: #ffffff;
-    padding-left: 112px;
-    padding-right: 112px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.navbar {
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .nav-item {

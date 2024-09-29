@@ -2,36 +2,36 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    height: 1609px;
     background-color: #f9fafb;
-}
-
-.all-data {
-    display: flex;
-    background-color: #f9fafb;
-    height: 126px;
-}
-
-.all-data-hr {
-    height: 160px;
 }
 
 hr {
     height: 2px;
     background-color: #e4e7ec;
-    width: 1150px;
-    margin: 32px 0; /* Consolidated margin */
+    margin: 32px auto; /* Centered margin for horizontal alignment */
 }
 
 .my-dashboard {
     display: grid;
-    padding: 32px 112px 0; /* Consolidated padding */
+    padding: 0 80px; /* Consolidated padding */
+}
+
+.hero-heading {
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    margin: 0;
+    height: 160px;
+}
+
+.all-data-hr {
+    padding: 0;
+    margin: 0;
 }
 
 .welcome-profile {
-    width: 331px;
     height: 104px;
-    margin-right: 24px;
+    width: 360px;
 }
 
 .welcome {
@@ -46,95 +46,115 @@ hr {
 }
 
 .profile-id {
-    width: 249px;
     height: 42px;
+    width: 249px;
     background-image: linear-gradient(to right, #ffead1, #a5d2eb);
     border-radius: 21px;
     color: #0046c4;
     text-align: center;
-    padding: 7px 0; /* Consolidated padding */
+    padding: 7px 0;
     font-size: 18px;
     font-weight: 600;
-    margin-left: 32px;
 }
 
 .total,
 .response {
-    width: 370px;
-    height: 126px;
     display: flex;
+    height: 126px;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 24px; /* Consolidated padding */
+    padding: 0 24px;
+    margin-left: 24px;
     border-radius: 16px;
-    background-color: #fff;
+    background-color: #f4f4f4;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-right: 24px;
     transition: box-shadow 0.3s ease;
 }
 
-.total:hover {
+.total:hover,
+.response:hover {
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 .total-dataset,
-.active-response,
-.subscription {
+.active-response {
     color: #000;
     font-size: 20px;
     font-weight: 500;
 }
 
-.data-number {
-    color: #000;
+.subscription {
     font-size: 30px;
-    font-weight: 500;
+    margin: 0;
+    padding: 0;
 }
 
 .total-number,
 .active-number {
-    display: grid;
-    padding-top: 24px;
+    margin-left: 24px;
+    width: 389px;
+    margin-top: 12px;
+}
+
+.data-number {
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
 }
 
 .data-svg,
 .active-svg {
     align-items: center;
-    margin-right: 24px;
-    background-color: #f2f4f7;
+    margin-left: 24px;
+    background-color: #ffffff;
     width: 64px;
     height: 64px;
     padding: 9.5px;
     border-radius: 12px;
 }
 
-.hr {
-    height: 10px;
-    margin-top: 50px;
-    background-color: #007bff;
-    width: 1280px;
+.subscribe-button {
+    width: 302px;
+    height: 60px;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #60b1df;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dataset-button {
+    display: flex;
+    align-items: center;
+    margin: 32px 0 24px;
 }
 
 .card-container {
-    display: grid;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .card {
     background-color: #fff;
     height: 359px;
-    width: 260px;
-    padding: 8px 8px 16px; /* Consolidated padding */
+    width: 286px;
+    padding: 8px 8px 16px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    margin-left: 7px;
-    margin-right: 7px;
+    margin-bottom: 24px; /* Spacing for cards */
 }
 
 #my-subscribes {
     color: #101828;
     font-weight: 500;
     font-size: 24px;
+    margin-left: 0;
+    margin-top: 14px;
+    margin-right: auto;
 }
 
 .card-body {
@@ -146,7 +166,7 @@ hr {
     color: #101828;
     font-weight: 600;
     font-size: 20px;
-    margin: 16px 0 10px 16px; /* Consolidated margin */
+    margin: 16px 0 10px 16px;
 }
 
 .card-text {
@@ -165,13 +185,59 @@ hr {
     color: transparent;
     font-weight: 600;
     font-size: 18px;
-    margin: 0 16px 16px; /* Consolidated margin */
+    margin: 0 16px 16px;
     text-align: left;
 }
 
 .see-more {
-    color: #60b1df; /* Link color */
+    color: #60b1df;
     text-decoration: underline;
     cursor: pointer;
     font-size: 15px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .my-dashboard {
+        padding: 0 20px; /* Reduced padding for smaller screens */
+    }
+
+    .hero-heading {
+        display: flex;
+
+        height: auto; /* Allow height to adjust */
+    }
+
+    .welcome-profile,
+    .total,
+    .response {
+        width: 100%; /* Full width for smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+
+    .card {
+        width: 90%; /* Full width for cards on small screens */
+    }
+
+    .subscribe-button {
+        width: 100%; /* Full width for button */
+        margin-top: 16px; /* Space above button */
+    }
+}
+
+@media (min-width: 769px) {
+    .total-number,
+    .active-number {
+        width: auto; /* Adjust width on larger screens */
+    }
+
+    .data-svg,
+    .active-svg {
+        margin-left: 0; /* Reset margin */
+    }
 }
