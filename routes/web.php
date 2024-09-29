@@ -6,6 +6,7 @@ use App\Http\Controllers\DatasetController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SubscriptionController;
 
 // Public routes
 Route::get('/register', [AuthController::class, 'register'])->name('register');
