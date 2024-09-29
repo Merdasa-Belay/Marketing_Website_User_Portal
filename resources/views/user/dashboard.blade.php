@@ -36,7 +36,8 @@
                             Total Datasets
                         </p>
                         <p class="data-number">
-                            {{ $datasets->count() }}
+                            {{ $datasetsCount }}
+
                         </p>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
             <p id="my-subscribes">
                 My Subscribed Datasets
             </p>
-            <div class="sub-dataset d-flex flex-wrap gap-3">
+            <div class="card-container d-flex flex-wrap gap-3">
                 @foreach ($datasets as $dataset)
                     <div class="card">
                         <img class="image-dataset"
@@ -84,8 +85,14 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{ $dataset->name }}</h5>
-                            <p class="card-text">{{ $dataset->description }}</p>
+                            <p class="card-text">
+                                {{ Str::limit($dataset->description, 72) }}
+                                @if (strlen($dataset->description) > 72)
+                                    ... <a href="#" class="see-more" data-id="{{ $dataset->id }}">See More</a>
+                                @endif
+                            </p>
                             <a class="view-dataset" href="{{ $dataset->link }}">View Datasets</a>
+
                         </div>
                     </div>
                 @endforeach

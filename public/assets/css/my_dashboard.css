@@ -20,15 +20,14 @@ hr {
     height: 2px;
     background-color: #e4e7ec;
     width: 1150px;
-    margin-top: 32px;
+    margin: 32px 0; /* Consolidated margin */
 }
 
 .my-dashboard {
     display: grid;
-    padding-top: 32px;
-    padding-left: 112px;
-    padding-right: 112px;
+    padding: 32px 112px 0; /* Consolidated padding */
 }
+
 .welcome-profile {
     width: 331px;
     height: 104px;
@@ -41,7 +40,7 @@ hr {
 }
 
 .fullname {
-    color: #000000;
+    color: #000;
     font-size: 25px;
     font-weight: 500;
 }
@@ -53,85 +52,60 @@ hr {
     border-radius: 21px;
     color: #0046c4;
     text-align: center;
-    padding-top: 7px;
+    padding: 7px 0; /* Consolidated padding */
     font-size: 18px;
     font-weight: 600;
     margin-left: 32px;
 }
-.total {
+
+.total,
+.response {
     width: 370px;
     height: 126px;
     display: flex;
-    padding-left: 24px;
-    padding-right: 24px;
-    border-radius: 16px;
-    background-color: #ffff;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-    margin-right: 24px;
-}
-
-.response {
-    width: 389px;
-    height: 126px;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    padding-left: 24px;
-    padding-right: 0;
-    border-radius: 16px;
-    background-color: #ffff;
-}
-.total-dataset {
-    color: #000000;
-    font-size: 20px;
-    font-weight: 500;
-}
-.data-number {
-    color: #000000;
-    font-size: 30px;
-    font-weight: 500;
-}
-.total-number {
-    display: grid;
-    padding-top: 24px;
-}
-
-.data-svg {
     align-items: center;
-    margin-top: 31px;
+    justify-content: space-between;
+    padding: 0 24px; /* Consolidated padding */
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-right: 24px;
-    background-color: #f2f4f7;
-    width: 64px;
-    height: 64px;
-    padding: 9.5px;
-    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
 }
 
-.active-svg {
-    align-items: center;
-    margin-top: 31px;
-    margin-right: 24px;
-    background-color: #f2f4f7;
-    width: 64px;
-    height: 64px;
-    padding: 9.5px;
-    border-radius: 12px;
+.total:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
-.active-response {
-    color: #000000;
-    font-size: 20px;
-    font-weight: 500;
-}
-
+.total-dataset,
+.active-response,
 .subscription {
-    color: #000000;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.data-number {
+    color: #000;
     font-size: 30px;
     font-weight: 500;
 }
 
+.total-number,
 .active-number {
     display: grid;
     padding-top: 24px;
+}
+
+.data-svg,
+.active-svg {
+    align-items: center;
+    margin-right: 24px;
+    background-color: #f2f4f7;
+    width: 64px;
+    height: 64px;
+    padding: 9.5px;
+    border-radius: 12px;
 }
 
 .hr {
@@ -141,52 +115,48 @@ hr {
     width: 1280px;
 }
 
-.subscribed-dataset {
-    padding-left: 80px;
-    padding-right: 80px;
-}
-.card {
-    background-color: #ffffff;
-    height: 359px;
-    width: 286px;
-    padding-top: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+.card-container {
+    display: grid;
+    margin: 0;
 }
 
-.subscribed-dataset {
-    margin-top: 0;
+.card {
+    background-color: #fff;
+    height: 359px;
+    width: 260px;
+    padding: 8px 8px 16px; /* Consolidated padding */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    margin-left: 7px;
+    margin-right: 7px;
 }
+
 #my-subscribes {
     color: #101828;
     font-weight: 500;
     font-size: 24px;
 }
+
 .card-body {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: #ffffff;
+    padding: 0;
+    background-color: #fff;
 }
+
 .card-title {
     color: #101828;
     font-weight: 600;
     font-size: 20px;
-    margin-left: 16px;
-    margin-top: 16px;
-    margin-right: auto;
-    margin-bottom: 10px;
+    margin: 16px 0 10px 16px; /* Consolidated margin */
 }
+
 .card-text {
     color: #475467;
     font-weight: 500;
     font-size: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    margin: 16px 16px 0;
     text-align: left;
 }
+
 .view-dataset {
     background: linear-gradient(90deg, #f1c28c, #60b1df);
     -webkit-background-clip: text;
@@ -195,8 +165,13 @@ hr {
     color: transparent;
     font-weight: 600;
     font-size: 18px;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    margin: 0 16px 16px; /* Consolidated margin */
     text-align: left;
+}
+
+.see-more {
+    color: #60b1df; /* Link color */
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 15px;
 }

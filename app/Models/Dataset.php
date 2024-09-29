@@ -9,10 +9,4 @@ class Dataset extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'description', 'image'];
-
-
-    public function subscriptions()
-    {
-        return $this->hasMany(Subscription::class);
-    }
 }
