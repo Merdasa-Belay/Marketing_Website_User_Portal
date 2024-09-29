@@ -6,7 +6,7 @@ use App\Http\Controllers\DatasetController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\TransactionController;
 
 // Public routes
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -19,13 +19,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::get('/dashboard/transactions', [TransactionController::class, 'index'])->name('dashboard.transactions');
+
     Route::get('/detail/{user}', [DetailController::class, 'show'])->name('detail.show');
     Route::put('/user/update/{user}', [DetailController::class, 'update'])->name('user.update');
     Route::put('/user/updatePassword/{user}', [DetailController::class, 'updatePassword'])->name('user.updatePassword');
     Route::put('/profile/{user}/upload-picture', [DetailController::class, 'uploadProfilePicture'])->name('profile.uploadPicture');
 
-
     Route::get('/dataset', [DatasetController::class, 'index'])->name('dataset');
-
     Route::get('/report', [ReportController::class, 'show'])->name('user.report');
 });

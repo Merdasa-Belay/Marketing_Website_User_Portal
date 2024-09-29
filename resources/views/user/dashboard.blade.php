@@ -39,6 +39,7 @@
 
 
         <div class="subscribed-dataset">
+
             <div class="dataset-button">
                 <p id="my-subscribes">My Subscribed Datasets</p>
                 <button class="subscribe-button btn btn-primary mt-3 mt-md-0">Subscribe to more Datasets</button>
@@ -68,6 +69,47 @@
                     </div>
                 @endforeach
             </div>
+            <hr>
+        </div>
+        <div class="transaction-history">
+
+            <div class="container mt-5">
+                <h2 class="mb-4">Transaction History</h2>
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Dataset Type</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($transactions as $transaction)
+                            <tr>
+                                <td>{{ $transaction->transaction_id }}</td>
+                                <td>{{ $transaction->dataset_type }}</td>
+                                <td>{{ $transaction->status }}</td>
+                                <td>${{ number_format($transaction->amount, 2) }}</td>
+                                <td>{{ $transaction->payment_method }}</td>
+                                <td>{{ $transaction->date->format('d M, Y') }}</td>
+
+
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="6" class="text-center">No transactions found</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
         </div>
     </div>
 @endsection
