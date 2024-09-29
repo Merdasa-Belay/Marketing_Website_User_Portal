@@ -8,7 +8,6 @@ body {
 hr {
     height: 2px;
     background-color: #e4e7ec;
-    margin: 32px auto; /* Centered margin for horizontal alignment */
 }
 
 .my-dashboard {
@@ -20,6 +19,8 @@ hr {
     display: flex;
     align-items: center;
     padding-left: 32px;
+    padding-right: 32px;
+
     margin: 0;
     height: 160px;
 }
@@ -31,7 +32,6 @@ hr {
 
 .welcome-profile {
     height: 104px;
-    width: 360px;
 }
 
 .welcome {
@@ -102,6 +102,11 @@ hr {
     margin: 0;
 }
 
+.subscribed-dataset {
+    margin: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+}
 .data-svg,
 .active-svg {
     align-items: center;
@@ -141,7 +146,7 @@ hr {
 .card {
     background-color: #fff;
     height: 359px;
-    width: 286px;
+    width: 260px;
     padding: 8px 8px 16px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
@@ -185,7 +190,8 @@ hr {
     color: transparent;
     font-weight: 600;
     font-size: 18px;
-    margin: 0 16px 16px;
+    margin-left: 16px;
+
     text-align: left;
 }
 
@@ -218,10 +224,12 @@ hr {
     .card-container {
         flex-direction: column; /* Stack cards vertically */
         align-items: center; /* Center cards */
+        justify-content: center;
     }
 
     .card {
-        width: 90%; /* Full width for cards on small screens */
+        width: 100%; /* Full width for cards on small screens */
+        max-width: 600px;
     }
 
     .subscribe-button {

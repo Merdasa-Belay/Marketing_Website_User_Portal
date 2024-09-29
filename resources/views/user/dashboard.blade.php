@@ -54,15 +54,16 @@
 
                             <div class="card-body">
                                 <h5 class="card-title">{{ $dataset->name }}</h5>
-                                <p class="card-text">
+                                <p class="card-text mt-auto">
                                     {{ Str::limit($dataset->description, 72) }}
                                     @if (strlen($dataset->description) > 72)
                                         ... <a href="#" class="see-more" data-id="{{ $dataset->id }}">See More</a>
                                     @endif
                                 </p>
-                                <a class="view-dataset mt-auto btn btn-outline-primary" href="{{ $dataset->link }}">View
-                                    Datasets</a>
+
                             </div>
+                            <a class="view-dataset" href="{{ $dataset->link }}">View
+                                Datasets</a>
                         </div>
                     </div>
                 @endforeach
