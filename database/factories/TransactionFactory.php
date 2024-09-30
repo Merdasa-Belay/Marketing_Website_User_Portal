@@ -21,8 +21,8 @@ class TransactionFactory extends Factory
     public function definition(): array
     {
         return [
-            'transaction_id' => $this->generateTransactionId(),
-            'user_id' => User::factory(), // Use this if you want to create a new user each time
+            'transaction_id' => $this->generateTransactionId(), // Use the custom method to generate transaction ID
+            'user_id' => User::inRandomOrder()->first()->id ?? User::factory(), // Use an existing user or create one if none exists
             'dataset_type' => $this->faker->word(),
             'status' => $this->faker->randomElement(['Pending', 'Completed', 'Failed']),
             'amount' => $this->faker->randomFloat(2, 10, 1000),

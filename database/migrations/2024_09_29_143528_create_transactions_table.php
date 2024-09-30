@@ -9,13 +9,14 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id('transaction_id'); // Transaction ID
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Ensure user_id is present
+            $table->id();
+            $table->string('transaction_id')->unique(); // Change this to 'string' to support alphanumeric values
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('dataset_type');
-            $table->string('status');
-            $table->decimal('amount', 10, 2);
+            $table->enum('status', ['Pending', 'Completed', 'Failed']);
+            $table->decimal('amount', 8, 2);
             $table->string('payment_method');
-            $table->timestamp('date');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
