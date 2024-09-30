@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TransactionFactory extends Factory
 {
+    protected $model = Transaction::class; // Specify the model
+
     /**
      * Define the model's default state.
      *
@@ -18,7 +21,8 @@ class TransactionFactory extends Factory
     public function definition(): array
     {
         return [
-            'transaction_id' => $this->generateTransactionId(), // Use the private method
+            'transaction_id' => $this->generateTransactionId(),
+            'user_id' => User::factory(), // Use this if you want to create a new user each time
             'dataset_type' => $this->faker->word(),
             'status' => $this->faker->randomElement(['Pending', 'Completed', 'Failed']),
             'amount' => $this->faker->randomFloat(2, 10, 1000),
@@ -27,13 +31,13 @@ class TransactionFactory extends Factory
         ];
     }
 
-    private function generateTransactionId()
+    /**
+     * Generate a unique transaction ID.
+     *
+     * @return string
+     */
+    protected function generateTransactionId(): string
     {
-        $prefix = '#';
-        $numbers = mt_rand(1000, 9999); // Generates a 4-digit random number
-        $letters = strtoupper(substr(md5(uniqid()), 0, 2)); // Generates 2 random letters
-        $suffix = mt_rand(100000, 999999); // Generates a 6-digit random number
-
-        return $prefix . $numbers . $letters . $suffix;
+        return '#' . strtoupper(uniqid('', true) . bin2hex(random_bytes(3)));
     }
 }

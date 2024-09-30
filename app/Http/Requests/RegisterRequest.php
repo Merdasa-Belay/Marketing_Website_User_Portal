@@ -28,7 +28,8 @@ class RegisterRequest extends FormRequest
             'country' => 'required',
             'phone' => 'required',
             'email' => 'required|email',
-            'password' => 'nullable'
+            'password' => 'nullable',
+            'profile_id' => 'nullable',
         ];
     }
 }

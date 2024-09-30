@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatasetController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransactionController;
 
@@ -20,6 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/dashboard/transactions', [TransactionController::class, 'index'])->name('dashboard.transactions');
+    Route::post('/transactions', [TransactionController::class, 'store'])->name('transaction.store');
+
+    Route::get('/dashboard/subscriptions', [SubscriptionController::class, 'index'])->name('dashboard.subscriptions');
 
     Route::get('/detail/{user}', [DetailController::class, 'show'])->name('detail.show');
     Route::put('/user/update/{user}', [DetailController::class, 'update'])->name('user.update');

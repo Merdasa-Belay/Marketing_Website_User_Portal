@@ -250,3 +250,12 @@ hr {
         margin-left: 0; /* Reset margin */
     }
 }
+
+.custom-header {
+    background-color: #d0d5dd;
+}
+.history {
+    color: #101828;
+    font-size: 18px;
+    font-weight: 600;
+}

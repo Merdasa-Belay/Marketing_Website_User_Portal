@@ -17,8 +17,12 @@ class AuthController extends Controller
     }
 
     public function registerPost(RegisterRequest $request)
+
     {
+        $profileId = mt_rand(100000000, 999999999); // You can replace this with any unique logic
         $validated = $request->validated();
+        $validated['profile_id'] = $profileId;
+
         $validated['password'] = Hash::make($validated['password']);
         $user = User::create($validated);
         Auth::login($user);
@@ -45,6 +49,7 @@ class AuthController extends Controller
             // Get the authenticated user
             $user = Auth::user();
 
+
             // Redirect to the user detail page with the user ID
             return redirect()->route('detail.show', ['user' => $user->id]);
         }
@@ -64,7 +69,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
 
         // Regenerate a new session token to prevent CSRF attacks
-        $request->session()->regenerateToken();
 
         // Redirect to the homepage or login page after logging out
         return redirect()->route('login')->with('success', 'You have been logged out.');

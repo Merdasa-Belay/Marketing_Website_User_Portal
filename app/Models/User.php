@@ -23,8 +23,7 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
-        'profile_picture',
-
+        'profile_id',
     ];
 
 
@@ -50,5 +49,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function generateProfileId(): string
+    {
+        return 'Profile ID: ' . mt_rand(100000000000, 999999999999); // Generates a 12-digit random number
     }
 }

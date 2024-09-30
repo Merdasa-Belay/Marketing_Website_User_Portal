@@ -9,7 +9,8 @@
                 <div class="col-12 col-md-4 d-flex" style="padding: 0">
                     <div class="welcome-profile">
                         <p class="welcome">Welcome, <span class="fullname">{{ $user->fullname }}</span></p>
-                        <p class="profile-id">Profile ID: 232456789001</p>
+                        <p class="profile-id">Profile ID: {{ $user->profile_id }}</p>
+
                     </div>
                 </div>
 
@@ -28,7 +29,7 @@
                         @include('data-svg.subscription-svg')
                         <div class="active-number">
                             <p class="active-response">Active Subscription</p>
-                            <p class="subscription">5</p>
+                            <p class="subscription">{{ $subscriptionCount }}</p>
                         </div>
                     </div>
                 </div>
@@ -74,38 +75,39 @@
         <div class="transaction-history">
 
             <div class="container mt-5">
-                <h2 class="mb-4">Transaction History</h2>
-                <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>Dataset Type</th>
-                            <th>Status</th>
-                            <th>Amount</th>
-                            <th>Payment Method</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($transactions as $transaction)
+                <h2 class="mb-4 history">Transaction History</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
                             <tr>
-                                <td>{{ $transaction->transaction_id }}</td>
-                                <td>{{ $transaction->dataset_type }}</td>
-                                <td>{{ $transaction->status }}</td>
-                                <td>${{ number_format($transaction->amount, 2) }}</td>
-                                <td>{{ $transaction->payment_method }}</td>
-                                <td>{{ $transaction->date->format('d M, Y') }}</td>
-
-
+                                <th>Transaction ID</th>
+                                <th>Dataset Type</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>Payment Method</th>
+                                <th>Date</th>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" class="text-center">No transactions found</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($transactions as $transaction)
+                                <tr>
+                                    <td>{{ $transaction->transaction_id }}</td>
+                                    <td>{{ $transaction->dataset_type }}</td>
+                                    <td>{{ $transaction->status }}</td>
+                                    <td>${{ number_format($transaction->amount, 2) }}</td>
+                                    <td>{{ $transaction->payment_method }}</td>
+                                    <td>{{ $transaction->date->format('d M, Y') }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">No transactions found</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
 
 
 
