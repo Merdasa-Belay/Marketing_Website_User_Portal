@@ -73,19 +73,38 @@
             <hr>
         </div>
         <div class="transaction-history">
-
             <div class="container mt-5">
-                <h2 class="mb-4 history">Transaction History</h2>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand">Transaction History</a>
+
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item me-2">
+                                <button class="btn btn-outline-success" type="button" onclick="toggleDateInput()"
+                                    data-bs-toggle="tooltip" title="Click to select a date">
+                                    <i class="bi bi-calendar"></i> Select Date
+                                </button>
+
+                                <input type="date" class="form-control mt-2" id="selectDate" name="selectDate"
+                                    style="display: none;">
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-outline-success" type="submit">Filters</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Transaction ID</th>
-                                <th>Dataset Type</th>
-                                <th>Status</th>
-                                <th>Amount</th>
-                                <th>Payment Method</th>
-                                <th>Date</th>
+                                <th scope="col">Transaction ID</th>
+                                <th scope="col">Dataset Type</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Payment Method</th>
+                                <th scope="col">Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -107,11 +126,8 @@
                     </table>
                 </div>
             </div>
-
-
-
-
-
         </div>
+
     </div>
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
 @endsection

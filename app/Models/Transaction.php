@@ -19,6 +19,6 @@ class Transaction extends Model
         $letters = strtoupper(substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'), 0, 2)); // Generate 2 random letters
         $additionalNumbers = rand(100000, 999999); // Generate a random number between 100000 and 999999
 
-        return '#' . $numbers . $letters . $additionalNumbers; // Return the formatted transaction ID
+        return '#' . $numbers . $letters; // Return the formatted transaction ID
     }
 }

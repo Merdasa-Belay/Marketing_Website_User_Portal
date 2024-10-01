@@ -38,6 +38,6 @@ class TransactionFactory extends Factory
      */
     protected function generateTransactionId(): string
     {
-        return '#' . strtoupper(uniqid('', true) . bin2hex(random_bytes(3)));
+        return '#' . strtoupper(uniqid());
     }
 }

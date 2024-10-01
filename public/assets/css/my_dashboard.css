@@ -259,3 +259,8 @@ hr {
     font-size: 18px;
     font-weight: 600;
 }
+
+.btn-outline-success:active {
+    background-color: #28a745;
+    color: #fff;
+}
