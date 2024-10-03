@@ -115,7 +115,7 @@
                                     <td>
                                         <span
                                             class="badge 
-                                            @if ($transaction->status == 'Completed') bg-success 
+                                            @if ($transaction->status == 'Success') bg-success 
                                             @elseif ($transaction->status == 'Pending') bg-warning text-dark 
                                             @else bg-danger @endif">
                                             {{ $transaction->status }}

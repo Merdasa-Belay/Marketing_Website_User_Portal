@@ -13,7 +13,7 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_id')->unique(); // Change this to 'string' to support alphanumeric values
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('dataset_type');
-            $table->enum('status', ['Pending', 'Completed', 'Failed']);
+            $table->enum('status', ['Pending', 'Success', 'Failed']);
             $table->decimal('amount', 8, 2);
             $table->string('payment_method');
             $table->dateTime('date');

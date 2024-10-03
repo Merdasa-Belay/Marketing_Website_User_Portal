@@ -24,7 +24,7 @@ class TransactionFactory extends Factory
             'transaction_id' => $this->generateTransactionId(), // Use the custom method to generate transaction ID
             'user_id' => User::inRandomOrder()->first()->id ?? User::factory(), // Use an existing user or create one if none exists
             'dataset_type' => $this->faker->word(),
-            'status' => $this->faker->randomElement(['Pending', 'Completed', 'Failed']),
+            'status' => $this->faker->randomElement(['Pending', 'Success', 'Failed']),
             'amount' => $this->faker->randomFloat(2, 10, 1000),
             'payment_method' => $this->faker->randomElement(['Credit Card', 'Bank Transfer', 'PayPal']),
             'date' => $this->faker->dateTimeBetween('-1 year', 'now'),
