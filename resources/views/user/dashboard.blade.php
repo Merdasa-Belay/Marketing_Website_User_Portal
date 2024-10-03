@@ -95,10 +95,9 @@
                     </div>
                 </nav>
                 {{-- transaction table --}}
-
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead>
+                    <table class="table table-bordered table-hover align-middle text-center">
+                        <thead class="bg-secondary text-white">
                             <tr>
                                 <th scope="col">Transaction ID</th>
                                 <th scope="col">Dataset Type</th>
@@ -110,22 +109,31 @@
                         </thead>
                         <tbody>
                             @forelse ($transactions as $transaction)
-                                <tr>
+                                <tr class="bg-light text-dark">
                                     <td>{{ $transaction->transaction_id }}</td>
                                     <td>{{ $transaction->dataset_type }}</td>
-                                    <td>{{ $transaction->status }}</td>
+                                    <td>
+                                        <span
+                                            class="badge 
+                                            @if ($transaction->status == 'Completed') bg-success 
+                                            @elseif ($transaction->status == 'Pending') bg-warning text-dark 
+                                            @else bg-danger @endif">
+                                            {{ $transaction->status }}
+                                        </span>
+                                    </td>
                                     <td>${{ number_format($transaction->amount, 2) }}</td>
                                     <td>{{ $transaction->payment_method }}</td>
                                     <td>{{ $transaction->date->format('d M, Y') }}</td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center">No transactions found</td>
+                                    <td colspan="6" class="text-center text-muted">No transactions found</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
 
