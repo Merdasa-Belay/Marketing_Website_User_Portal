@@ -264,3 +264,42 @@ hr {
     background-color: #28a745;
     color: #fff;
 }
+
+/* Custom status colors */
+.status-success {
+    background-color: #28a745; /* Custom green color for Success */
+    color: #ffffff; /* White text color */
+    padding: 0.5em 0.75em; /* Optional: Add padding for better appearance */
+    border-radius: 0.25rem; /* Optional: Add border radius for rounded corners */
+    font-weight: bold; /* Optional: Bold text */
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: #ffc107; /* Custom yellow color for Pending */
+    color: #000000; /* Black text color */
+    padding: 0.5em 0.75em;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-failed {
+    background-color: #dc3545; /* Custom red color for Failed */
+    color: #ffffff; /* White text color */
+    padding: 0.5em 0.75em;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Make the table responsive for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em; /* Reduce font size on smaller screens */
+    }
+    th,
+    td {
+        white-space: nowrap; /* Prevent text wrapping in table cells */
+    }
+}

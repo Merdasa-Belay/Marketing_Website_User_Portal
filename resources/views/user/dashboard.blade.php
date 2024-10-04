@@ -96,7 +96,7 @@
                 </nav>
                 {{-- transaction table --}}
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover align-middle text-center">
+                    <table class="table table-bordered table-hover table-striped align-middle text-center">
                         <thead class="bg-secondary text-white">
                             <tr>
                                 <th scope="col">Transaction ID</th>
@@ -115,9 +115,9 @@
                                     <td>
                                         <span
                                             class="badge 
-                                            @if ($transaction->status == 'Success') bg-success 
-                                            @elseif ($transaction->status == 'Pending') bg-warning text-dark 
-                                            @else bg-danger @endif">
+                                            @if ($transaction->status == 'Success') status-success
+                                            @elseif ($transaction->status == 'Pending') status-pending
+                                            @elseif ($transaction->status == 'Failed') status-failed @endif">
                                             {{ $transaction->status }}
                                         </span>
                                     </td>
@@ -133,6 +133,7 @@
                         </tbody>
                     </table>
                 </div>
+
 
             </div>
         </div>
