@@ -97,7 +97,7 @@
                 {{-- transaction table --}}
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover table-striped align-middle text-center">
-                        <thead class="bg-secondary text-white">
+                        <thead class="bg-secondary">
                             <tr>
                                 <th scope="col">Transaction ID</th>
                                 <th scope="col">Dataset Type</th>

@@ -251,8 +251,14 @@ hr {
     }
 }
 
+thead.bg-secondary {
+    background-color: #f9fafb !important; /* Adjust the background color if necessary */
+    color: #667085; /* Set the text color to white for better contrast */
+    font-size: 12px;
+    font-weight: 500;
+}
 .custom-header {
-    background-color: #d0d5dd;
+    background-color: #f9fafb;
 }
 .history {
     color: #101828;
@@ -262,13 +268,13 @@ hr {
 
 .btn-outline-success:active {
     background-color: #28a745;
-    color: #fff;
+    color: #027a48;
 }
 
 /* Custom status colors */
 .status-success {
-    background-color: #28a745; /* Custom green color for Success */
-    color: #ffffff; /* White text color */
+    background-color: #ecfdf3; /* Custom green color for Success */
+    color: #28a745; /* White text color */
     padding: 0.5em 0.75em; /* Optional: Add padding for better appearance */
     border-radius: 0.25rem; /* Optional: Add border radius for rounded corners */
     font-weight: bold; /* Optional: Bold text */
@@ -276,8 +282,8 @@ hr {
 }
 
 .status-pending {
-    background-color: #ffc107; /* Custom yellow color for Pending */
-    color: #000000; /* Black text color */
+    background-color: #f2f4f7; /* Custom yellow color for Pending */
+    color: #344054; /* Black text color */
     padding: 0.5em 0.75em;
     border-radius: 0.25rem;
     font-weight: bold;
@@ -285,8 +291,8 @@ hr {
 }
 
 .status-failed {
-    background-color: #dc3545; /* Custom red color for Failed */
-    color: #ffffff; /* White text color */
+    background-color: #fef3f2; /* Custom red color for Failed */
+    color: #b42318; /* White text color */
     padding: 0.5em 0.75em;
     border-radius: 0.25rem;
     font-weight: bold;
