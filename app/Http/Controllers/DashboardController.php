@@ -22,7 +22,7 @@ class DashboardController extends Controller
             $user = $request->user(); // Retrieve the authenticated user
             $title = 'Dashboard';
 
-            // Set the number of items per page to 4
+            // Set the number of items per page 
             $perPageDataset = 4;
             $perPageTransaction = 10;
             $perPageSubscription = 10;
