@@ -70,8 +70,9 @@ class AuthController extends Controller
         $request->session()->invalidate();
 
         // Regenerate a new session token to prevent CSRF attacks
+        $request->session()->regenerateToken();
 
-        // Redirect to the homepage or login page after logging out
+        // Redirect to the login page with a success message
         return redirect()->route('login')->with('success', 'You have been logged out.');
     }
 }
