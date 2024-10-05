@@ -62,13 +62,13 @@
             <!-- Select country -->
             <div class="form-group register-input">
                 <label for="country" class="form-label register-name">Country</label>
-                <select class="form-select" id="country" name="country">
-                    <option selected>Select country</option>
-                    <option>Ethiopia</option>
-                    <option>Kenya</option>
-                    <option>Uganda</option>
+                <select class="form-select" id="country" name="country" aria-label="Select your country" required>
+                    <option value="" selected disabled>Select country</option>
                 </select>
             </div>
+
+
+
 
             <!-- Phone number -->
             <div class="form-group register-input">
@@ -121,6 +121,9 @@
 <script src="{{ asset('assets/js/register.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", showCountry);
 </script>
 
 </html>
