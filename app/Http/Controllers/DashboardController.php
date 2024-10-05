@@ -35,11 +35,14 @@ class DashboardController extends Controller
             // Get the total count of datasets for the authenticated user
             $datasetsCount = Dataset::where('user_id', $user->id)->count();
 
+            // Fetch the paginated transactions for the authenticated user
+
             $transactions = Transaction::paginate($perPageTransaction)->map(function ($transaction) {
                 $transaction->date = Carbon::parse($transaction->date);
                 return $transaction;
             });
 
+            // Fetch the paginated subscriptions for the authenticated user
             $subscriptions = Subscription::where('user_id', $user->id)->paginate($perPageSubscription);
             $subscriptionCount = Subscription::where('user_id', $user->id)->count();
 
