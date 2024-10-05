@@ -10,7 +10,6 @@
                     <div class="welcome-profile">
                         <p class="welcome">Welcome, <span class="fullname">{{ $user->fullname }}</span></p>
                         <p class="profile-id">Profile ID: {{ $user->profile_id }}</p>
-
                     </div>
                 </div>
 
@@ -34,6 +33,7 @@
                     </div>
                 </div>
             </div>
+
 
             <hr>
         </div>
@@ -59,7 +59,7 @@
                                 <p class="card-text mt-auto">
                                     {{ Str::limit($dataset->description, 72) }}
                                     @if (strlen($dataset->description) > 72)
-                                        ... <a href="#" class="see-more" data-id="{{ $dataset->id }}">See More</a>
+                                        <a href="#" class="see-more" data-id="{{ $dataset->id }}"></a>
                                     @endif
                                 </p>
 

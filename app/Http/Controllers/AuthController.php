@@ -10,16 +10,17 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    //  (Registration view)                
     public function register()
     {
-        //  (Registration view)
         return view("auth.register");
     }
 
+    // (Registration post)
     public function registerPost(RegisterRequest $request)
 
     {
-        $profileId = mt_rand(100000000, 999999999); // You can replace this with any unique logic
+        $profileId = mt_rand(100000000, 999999999);
         $validated = $request->validated();
         $validated['profile_id'] = $profileId;
 
