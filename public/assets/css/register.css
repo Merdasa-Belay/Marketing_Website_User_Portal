@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "inter", sans-serif, serif;
+    font-family: "Poppin", sans-serif, serif;
 }
 
 body {
@@ -13,12 +13,12 @@ body {
     margin: 0;
 }
 
-#image-dudu {
+#image-dascena {
     display: grid;
     justify-content: center;
     align-items: center;
 }
-#datadudu-image {
+#dascena-image {
     width: 224.49px;
     height: 56px;
     margin-top: 48px;
