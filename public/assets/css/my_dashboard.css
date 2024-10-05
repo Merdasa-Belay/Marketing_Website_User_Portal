@@ -251,17 +251,28 @@ hr {
     }
 }
 
-thead.bg-secondary {
-    background-color: #f9fafb !important; /* Adjust the background color if necessary */
-    color: #667085; /* Set the text color to white for better contrast */
+.table-head th {
+    background-color: #f9fafb !important;
+    color: #667085 !important;
+    padding: 1em;
     font-size: 12px;
     font-weight: 500;
+}
+
+.table-bordered tbody td {
+    background-color: #ffffff; /* You can adjust the color if needed */
+    color: #667085;
+    padding: 1em;
+    font-size: 12px;
+    font-weight: 500; /* Slightly lighter font-weight than <th> */
+    text-align: center; /* Ensure alignment matches the header */
+    border-top: 1px solid #dee2e6; /* Add top border for separation */
 }
 .custom-header {
     background-color: #f9fafb;
 }
 .history {
-    color: #101828;
+    color: #667085;
     font-size: 18px;
     font-weight: 600;
 }

@@ -96,8 +96,8 @@
                 </nav>
                 {{-- transaction table --}}
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped align-middle text-center">
-                        <thead class="bg-secondary">
+                    <table class="table table-bordered table-hover align-middle text-center">
+                        <thead class="table-head">
                             <tr>
                                 <th scope="col">Transaction ID</th>
                                 <th scope="col">Dataset Type</th>
@@ -109,7 +109,7 @@
                         </thead>
                         <tbody>
                             @forelse ($transactions as $transaction)
-                                <tr class="bg-light text-dark">
+                                <tr class="bg-light">
                                     <td>{{ $transaction->transaction_id }}</td>
                                     <td>{{ $transaction->dataset_type }}</td>
                                     <td>
