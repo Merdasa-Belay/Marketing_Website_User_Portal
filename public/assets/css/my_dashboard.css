@@ -138,22 +138,6 @@ hr {
     margin: 32px 0 24px;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.card {
-    background-color: #fff;
-    height: 359px;
-    width: 260px;
-    padding: 8px 8px 16px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    margin-bottom: 24px; /* Spacing for cards */
-}
-
 #my-subscribes {
     color: #101828;
     font-weight: 500;
@@ -161,46 +145,6 @@ hr {
     margin-left: 0;
     margin-top: 14px;
     margin-right: auto;
-}
-
-.card-body {
-    padding: 0;
-    background-color: #fff;
-}
-
-.card-title {
-    color: #101828;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 16px 0 10px 16px;
-}
-
-.card-text {
-    color: #475467;
-    font-weight: 500;
-    font-size: 16px;
-    margin: 16px 16px 0;
-    text-align: left;
-}
-
-.view-dataset {
-    background: linear-gradient(90deg, #f1c28c, #60b1df);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    font-weight: 600;
-    font-size: 18px;
-    margin-left: 16px;
-
-    text-align: left;
-}
-
-.see-more {
-    color: #60b1df;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 15px;
 }
 
 /* Media Queries for Responsive Design */
@@ -220,17 +164,6 @@ hr {
     .response {
         width: 100%; /* Full width for smaller screens */
         padding: 10px; /* Adjust padding */
-    }
-
-    .card-container {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center cards */
-        justify-content: center;
-    }
-
-    .card {
-        width: 100%; /* Full width for cards on small screens */
-        max-width: 600px;
     }
 
     .subscribe-button {
@@ -319,4 +252,10 @@ hr {
     td {
         white-space: nowrap; /* Prevent text wrapping in table cells */
     }
+}
+
+.welcome-profile,
+.total-number,
+.active-number {
+    word-wrap: break-word;
 }
