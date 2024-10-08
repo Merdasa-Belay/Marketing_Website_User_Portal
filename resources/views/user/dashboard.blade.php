@@ -4,17 +4,17 @@
     <link rel="stylesheet" href="{{ asset('assets/css/my_dashboard.css') }}">
 
     <div class="container-fluid my-dashboard">
-        <div class="all-data-hr">
+        <div class="all-data-hr container-fluid">
             <div class="hero-heading row g-3">
-                <div class="col-12 col-md-4 d-flex" style="padding: 0">
-                    <div class="welcome-profile">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center" style="padding: 0">
+                    <div class="welcome-profile text-center text-md-start">
                         <p class="welcome">Welcome, <span class="fullname">{{ $user->fullname }}</span></p>
                         <p class="profile-id">Profile ID: {{ $user->profile_id }}</p>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="total">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                    <div class="total text-center">
                         @include('data-svg.dataset-svg')
                         <div class="total-number">
                             <p class="total-dataset">Total Datasets</p>
@@ -23,8 +23,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="response">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                    <div class="response text-center">
                         @include('data-svg.subscription-svg')
                         <div class="active-number">
                             <p class="active-response">Active Subscription</p>
@@ -34,9 +34,9 @@
                 </div>
             </div>
 
-
-            <hr>
+            <hr class="col-12">
         </div>
+
 
 
         <div class="subscribed-dataset">
