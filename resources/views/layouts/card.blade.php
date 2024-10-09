@@ -2,9 +2,9 @@
 
 <div class="card-container row">
     @foreach ($datasets as $dataset)
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img class="image-dataset card-img-top"
+        <div class="col-6 col-sm-4 col-md-3 mb-2">
+            <div class="card">
+                <img class="card-img"
                     src="{{ !empty($dataset->image) ? asset('assets/dataset_images/' . $dataset->image) : 'https://picsum.photos/200/300?random=' . rand(1, 1000) }}"
                     alt="Dataset Image">
 
@@ -12,13 +12,10 @@
                     <h5 class="card-title">{{ $dataset->name }}</h5>
                     <p class="card-text mt-auto">
                         {{ Str::limit($dataset->description, 72) }}
-                        @if (strlen($dataset->description) > 72)
-                            <a href="#" class="see-more" data-id="{{ $dataset->id }}"></a>
-                        @endif
+
                     </p>
                 </div>
-                <a class="view-dataset" href="{{ $dataset->link }}">View
-                    Datasets</a>
+                <a class="view-dataset" href="{{ $dataset->link }}">View Datasets</a>
             </div>
         </div>
     @endforeach

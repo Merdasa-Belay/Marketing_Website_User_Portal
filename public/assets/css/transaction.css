@@ -1,0 +1,100 @@
+.body-transaction {
+    background-color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction {
+    color: #101828;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.transaction-search {
+    margin-bottom: 24px;
+}
+
+.btn-custom {
+    background-color: #ffffff;
+    color: #667085;
+    border: 1px solid #d0d5dd;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.table-head th {
+    background-color: #f9fafb !important;
+    color: #667085 !important;
+    padding: 1em;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.table-bordered tbody td {
+    background-color: #ffffff; /* You can adjust the color if needed */
+    color: #667085;
+    padding: 1em;
+    font-size: 12px;
+    font-weight: 500; /* Slightly lighter font-weight than <th> */
+    text-align: center; /* Ensure alignment matches the header */
+    border-top: 1px solid #dee2e6; /* Add top border for separation */
+}
+.custom-header {
+    background-color: #f9fafb;
+}
+.history {
+    color: #667085;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-outline-success:active {
+    background-color: #28a745;
+    color: #027a48;
+}
+
+/* Custom status colors */
+.status-success {
+    background-color: #ecfdf3; /* Custom green color for Success */
+    color: #28a745; /* White text color */
+    padding: 0.5em 0.75em; /* Optional: Add padding for better appearance */
+    border-radius: 0.25rem; /* Optional: Add border radius for rounded corners */
+    font-weight: bold; /* Optional: Bold text */
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: #f2f4f7; /* Custom yellow color for Pending */
+    color: #344054; /* Black text color */
+    padding: 0.5em 0.75em;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-failed {
+    background-color: #fef3f2; /* Custom red color for Failed */
+    color: #b42318; /* White text color */
+    padding: 0.5em 0.75em;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Make the table responsive for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em; /* Reduce font size on smaller screens */
+    }
+    th,
+    td {
+        white-space: nowrap; /* Prevent text wrapping in table cells */
+    }
+}
+
+.welcome-profile,
+.total-number,
+.active-number {
+    word-wrap: break-word;
+}

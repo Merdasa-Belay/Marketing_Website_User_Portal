@@ -3,18 +3,20 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('assets/css/my_dashboard.css') }}">
 
-    <div class="container-fluid my-dashboard">
+    <div class="wrapper my-dashboard">
         <div class="all-data-hr container-fluid">
             <div class="hero-heading row g-3">
-                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center" style="padding: 0">
+                <!-- Profile Section -->
+                <div class="col-12 col-md-4 d-flex align-items-center">
                     <div class="welcome-profile text-center text-md-start">
                         <p class="welcome">Welcome, <span class="fullname">{{ $user->fullname }}</span></p>
                         <p class="profile-id">Profile ID: {{ $user->profile_id }}</p>
                     </div>
                 </div>
 
+                <!-- Total Datasets Section -->
                 <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="total text-center">
+                    <div class="container total text-center">
                         @include('data-svg.dataset-svg')
                         <div class="total-number">
                             <p class="total-dataset">Total Datasets</p>
@@ -23,8 +25,9 @@
                     </div>
                 </div>
 
+                <!-- Active Subscriptions Section -->
                 <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="response text-center">
+                    <div class="container response text-center">
                         @include('data-svg.subscription-svg')
                         <div class="active-number">
                             <p class="active-response">Active Subscription</p>
@@ -36,6 +39,7 @@
 
             <hr class="col-12">
         </div>
+
 
 
 

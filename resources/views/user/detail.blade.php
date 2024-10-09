@@ -3,7 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('assets/css/my_detail.css') }}">
 
-    <div class="container-fluid user-dashboard">
+    <div class="wrapper user-dashboard">
         <h1 class="my-detail">My details</h1>
         @include('layouts.alert')
 
