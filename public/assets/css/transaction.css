@@ -32,11 +32,11 @@
 }
 
 .table-bordered tbody td {
-    background-color: #ffffff; /* You can adjust the color if needed */
+    background-color: #ffffff;
     color: #667085;
     padding: 1em;
     font-size: 12px;
-    font-weight: 500; /* Slightly lighter font-weight than <th> */
+    font-weight: 500;
     text-align: center; /* Ensure alignment matches the header */
     border-top: 1px solid #dee2e6; /* Add top border for separation */
 }
@@ -56,17 +56,17 @@
 
 /* Custom status colors */
 .status-success {
-    background-color: #ecfdf3; /* Custom green color for Success */
-    color: #28a745; /* White text color */
-    padding: 0.5em 0.75em; /* Optional: Add padding for better appearance */
-    border-radius: 0.25rem; /* Optional: Add border radius for rounded corners */
-    font-weight: bold; /* Optional: Bold text */
+    background-color: #ecfdf3;
+    color: #28a745;
+    padding: 0.5em 0.75em;
+    border-radius: 0.25rem;
+    font-weight: bold;
     display: inline-block;
 }
 
 .status-pending {
-    background-color: #f2f4f7; /* Custom yellow color for Pending */
-    color: #344054; /* Black text color */
+    background-color: #f2f4f7;
+    color: #344054;
     padding: 0.5em 0.75em;
     border-radius: 0.25rem;
     font-weight: bold;
@@ -74,8 +74,8 @@
 }
 
 .status-failed {
-    background-color: #fef3f2; /* Custom red color for Failed */
-    color: #b42318; /* White text color */
+    background-color: #fef3f2;
+    color: #b42318;
     padding: 0.5em 0.75em;
     border-radius: 0.25rem;
     font-weight: bold;
