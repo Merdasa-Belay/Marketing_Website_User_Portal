@@ -1,6 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
+    {{-- css link --}}
     <link rel="stylesheet" href="{{ asset('assets/css/my_dashboard.css') }}">
 
     <div class="wrapper my-dashboard">
@@ -50,6 +51,7 @@
                 <button class="subscribe-button btn btn-primary mt-3 mt-md-0">Subscribe to more Datasets</button>
             </div>
 
+            {{-- cards --}}
             @include('layouts.card')
 
 
