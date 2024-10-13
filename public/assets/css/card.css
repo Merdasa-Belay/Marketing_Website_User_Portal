@@ -1,8 +1,6 @@
 /* Card container styling */
 .card-container {
-    max-width: 1200px; /* Set maximum width of card container */
-    margin-left: 32px;
-    margin-right: 32px;
+    max-width: 1280px; /* Set maximum width of card container */
 }
 
 /* Add margin to columns */
