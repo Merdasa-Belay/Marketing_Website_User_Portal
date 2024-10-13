@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/card.css') }}">
 
-<div class="card-container row">
+<div class="row card-container">
     @foreach ($datasets as $dataset)
         <div class="col-6 col-sm-4 col-md-3 mb-2">
             <div class="card">
@@ -12,7 +12,6 @@
                     <h5 class="card-title">{{ $dataset->name }}</h5>
                     <p class="card-text mt-auto">
                         {{ Str::limit($dataset->description, 72) }}
-
                     </p>
                 </div>
                 <a class="view-dataset" href="{{ $dataset->link }}">View Datasets</a>

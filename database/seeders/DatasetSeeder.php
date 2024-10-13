@@ -16,7 +16,7 @@ class DatasetSeeder extends Seeder
         // Check if user exists
         if ($user) {
             // Create 10 datasets for the specified user
-            Dataset::factory()->count(10)->create(['user_id' => $user->id]);
+            Dataset::factory()->count(12)->create(['user_id' => $user->id]);
         }
     }
 }

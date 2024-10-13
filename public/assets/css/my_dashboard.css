@@ -126,9 +126,8 @@ hr {
 }
 
 .subscribe-button {
-    width: 302px;
-    height: 60px;
     border-radius: 16px;
+    padding: 16px;
     background-color: transparent;
     color: #344054;
     border: 2px solid #60b1df;

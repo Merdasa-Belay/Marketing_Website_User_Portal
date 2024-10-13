@@ -24,8 +24,8 @@ class DashboardController extends Controller
 
             // Set the number of items per page 
             $perPageDataset = 4;
-            $perPageTransaction = 10;
-            $perPageSubscription = 10;
+            $perPageTransaction = 12;
+            $perPageSubscription = 12;
 
 
 
