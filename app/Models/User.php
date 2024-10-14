@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return 'Profile ID: ' . mt_rand(100000000000, 999999999999); // Generates a 12-digit random number
     }
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

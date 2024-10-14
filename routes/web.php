@@ -18,6 +18,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Routes that require authentication
 Route::middleware('auth')->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/dashboard/transactions', [TransactionController::class, 'index'])->name('dashboard.transactions');
@@ -32,4 +33,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dataset', [DatasetController::class, 'index'])->name('dataset');
     Route::get('/report', [ReportController::class, 'show'])->name('user.report');
+
+    Route::post('/subscribe/{datasetId}', [SubscriptionController::class, 'subscribe'])->name('subscribe');
+    Route::post('/unsubscribe/{datasetId}', [SubscriptionController::class, 'unsubscribe'])->name('unsubscribe');
 });

@@ -43,28 +43,32 @@
 
 
 
-
         <div class="subscribed-dataset">
-
             <div class="dataset-button">
                 <p id="my-subscribes">My Subscribed Datasets</p>
-
-                <a class="subscribe-button btn btn-primary mt-3 mt-md-0"href="{{ route('dataset') }}"><i
-                        class="fas fa-bolt"></i> Subscribe to more
-                    Datasets</a>
-
-
+                <a class="subscribe-button btn btn-primary mt-3 mt-md-0" href="{{ route('dataset') }}">
+                    <i class="fas fa-bolt"></i> Subscribe to more Datasets
+                </a>
             </div>
 
-            {{-- cards --}}
-            @include('layouts.card')
-
-
-
-
+            {{-- cards for subscribed datasets --}}
+            @if ($subscribedDatasets->isEmpty())
+                <p>You have not subscribed to any datasets yet.</p>
+            @else
+                <div class="row card-container">
+                    @foreach ($subscribedDatasets as $subscription)
+                        @if ($subscription->dataset)
+                            @include('layouts.card', ['dataset' => $subscription->dataset]) <!-- Pass the dataset directly -->
+                        @else
+                            <p>Dataset information is missing for this subscription.</p>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
 
             <hr>
         </div>
+
         @include('layouts.transaction-table')
 
     </div>

@@ -2,30 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dataset;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SubscriptionController extends Controller
 {
-    //
-    public function index(Request $request)
+    public function subscribe($datasetId)
     {
-        if ($request->user()) {
-            // User is authenticated
-            $user = $request->user();
-            $title = 'Subscriptions';
+        // Check if the user is already subscribed
+        $user = Auth::user();
+        $subscription = Subscription::where('user_id', $user->id)->where('dataset_id', $datasetId)->first();
 
-            // Get the number of items per page from the request, defaulting to 10
-            $perPage = $request->input('per_page', 10);
-
-            // Fetch the paginated subscriptions for the authenticated user
-            $subscriptions = Subscription::where('user_id', $user->id)->paginate($perPage);
-
-            // Pass subscriptions to the view
-            return view('user.subscriptions', compact('user', 'title', 'subscriptions'));
-        } else {
-            // User is not authenticated
-            return redirect()->route('login');
+        if (!$subscription) {
+            // If not subscribed, create a new subscription
+            Subscription::create([
+                'user_id' => $user->id,
+                'dataset_id' => $datasetId,
+            ]);
         }
+
+
+        return redirect()->back()->with('success', 'Successfully subscribed!');
+    }
+
+    public function unsubscribe($datasetId)
+    {
+        // Remove the subscription
+        $user = Auth::user();
+        Subscription::where('user_id', $user->id)->where('dataset_id', $datasetId)->delete();
+
+        return redirect()->back()->with('success', 'Successfully unsubscribed!');
     }
 }

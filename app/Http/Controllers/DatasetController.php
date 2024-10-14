@@ -5,59 +5,30 @@ namespace App\Http\Controllers;
 use App\Models\Dataset;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DatasetController extends Controller
 {
     public function index(Request $request)
     {
         if ($request->user()) {
-            // User is authenticated
             $user = $request->user(); // Retrieve the authenticated user
-            $title = 'Dataset';
+            $title = 'Subscribed Datasets'; // Title for the view
 
             // Get the number of items per page from the request, defaulting to 10
             $perPage = $request->input('per_page', 10);
 
-            // Fetch the paginated datasets
-            $datasets = Dataset::paginate($perPage);
+            // Get subscribed dataset IDs for the authenticated user
+            $subscribedDatasetIds = Subscription::where('user_id', $user->id)->pluck('dataset_id')->toArray();
 
-            // Pass datasets to the view
-            return view('user.datasets', compact('user', 'title', 'datasets'));
+            // Fetch all datasets (or the datasets you want to show)
+            $datasets = Dataset::all();
+
+            // Pass datasets and subscribedDatasetIds to the view
+            return view('user.datasets', compact('user', 'title', 'datasets', 'subscribedDatasetIds'));
         } else {
             // User is not authenticated
             return redirect()->route('login');
         }
-    }
-
-    public function store(Request $request)
-    {
-        // Validate request data
-        $request->validate([
-            'name' => 'required|string|max:255',
-            // Add other validation rules as needed
-        ]);
-
-        // Create the dataset
-        $dataset = Dataset::create([
-            'name' => $request->name,
-            'user_id' => $request->user()->id,
-            // Add other dataset fields
-        ]);
-
-        // Increment the user's active subscription count
-        $subscription = Subscription::where('user_id', $request->user()->id)->first();
-
-        if ($subscription) {
-            $subscription->increment('active_count'); // Increment the active dataset count
-        } else {
-            // Optionally, create a new subscription if one doesn't exist
-            Subscription::create([
-                'user_id' => $request->user()->id,
-                'active_count' => 1, // Start with 1 active dataset
-            ]);
-        }
-
-        // Redirect or return response
-        return redirect()->route('dataset')->with('success', 'Dataset added successfully.');
     }
 }

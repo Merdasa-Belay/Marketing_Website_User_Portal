@@ -1,0 +1,32 @@
+/* Ensure the container is fluid */
+.container.datasets {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the items */
+}
+
+/* Flexbox for cards */
+.container.datasets .card {
+    flex: 1 1 calc(25% - 20px); /* 4 cards per row with 20px space */
+    margin: 10px;
+    box-sizing: border-box;
+    max-width: calc(25% - 20px); /* Limit the width to 25% of the container */
+}
+
+/* Media query for tablet screens */
+@media (max-width: 768px) {
+    .container.datasets .card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+    .container.datasets .card {
+        flex: 1 1 calc(100% - 20px); /* 1 card per row */
+        max-width: calc(100% - 20px);
+    }
+}

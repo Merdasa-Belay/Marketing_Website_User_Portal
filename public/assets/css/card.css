@@ -22,7 +22,28 @@
     justify-content: space-between; /* Space between elements inside the card */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-
+.image-button-container {
+    position: relative; /* Positioning context for absolute children */
+}
+.subscribe-data {
+    position: absolute; /* Allows the button to overlay the image */
+    bottom: 8px; /* Adjust as needed */
+    left: 8px; /* Adjust as needed */
+    padding: 4px 10px; /* Add horizontal padding as needed */
+    z-index: 1; /* Ensure button appears on top of the image */
+    border-radius: 16px; /* Rounded corners */
+    background-color: #ffffff; /* Background color */
+    color: #0046c4; /* Text color */
+    border: 2px solid #60b1df; /* Border styling */
+    font-size: 14px; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+.subscribe-data:hover {
+    background-color: #0046c4; /* Change background color on hover */
+    color: #ffffff;
+}
 /* Card title styling */
 .card-title {
     font-size: 18px;

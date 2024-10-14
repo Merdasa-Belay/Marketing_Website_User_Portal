@@ -10,11 +10,7 @@ use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
-    // Applying the auth middleware in the constructor
-
-
     // Index method for displaying the dashboard
-
     public function index(Request $request)
     {
         if ($request->user()) {
@@ -23,31 +19,37 @@ class DashboardController extends Controller
             $title = 'Dashboard';
 
             // Set the number of items per page 
-            $perPageDataset = 4;
             $perPageTransaction = 12;
-            $perPageSubscription = 12;
+            $perPageSubscription = 4;
 
 
 
-            // Fetch the paginated datasets for the authenticated user
-            $datasets = Dataset::where('user_id', $user->id)->paginate($perPageDataset);
+            // Fetch the subscribed datasets with their details
 
-            // Get the total count of datasets for the authenticated user
-            $datasetsCount = Dataset::where('user_id', $user->id)->count();
+            $datasetsCount = Dataset::count();
+
+
+            $subscribedDatasets = $user->subscriptions()->with('dataset')->get()->pluck('dataset');
+
+            $subscriptionCount = $subscribedDatasets->count(); // Get count from paginated results
+            // Fetch only the subscribed datasets
 
             // Fetch the paginated transactions for the authenticated user
-
             $transactions = Transaction::paginate($perPageTransaction)->map(function ($transaction) {
                 $transaction->date = Carbon::parse($transaction->date);
                 return $transaction;
             });
 
-            // Fetch the paginated subscriptions for the authenticated user
-            $subscriptions = Subscription::where('user_id', $user->id)->paginate($perPageSubscription);
-            $subscriptionCount = Subscription::where('user_id', $user->id)->count();
-
             // Pass datasets and their count to the view
-            return view('user.dashboard', compact('user', 'title', 'datasets', 'datasetsCount', 'transactions', 'subscriptions', 'subscriptionCount'));
+            return view('user.dashboard', compact(
+                'user',
+                'title',
+                'subscribedDatasets',
+                'subscriptionCount',
+                'datasetsCount',
+                'transactions',
+
+            ));
         } else {
             // User is not authenticated
             return redirect()->route('login');
