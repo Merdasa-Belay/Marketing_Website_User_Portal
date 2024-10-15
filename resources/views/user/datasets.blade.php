@@ -5,10 +5,8 @@
 
     <div class="container datasets">
         <div class="row card-container">
-            @foreach ($datasets as $dataset)
-                <!-- Include the card layout and pass the dataset -->
-                @include('layouts.card', ['dataset' => $dataset])
-            @endforeach
+            <!-- Include the card layout and pass the dataset -->
+            @include('layouts.card')
         </div>
     </div>
 @endsection

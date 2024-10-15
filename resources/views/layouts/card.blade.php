@@ -10,14 +10,25 @@
                         alt="Dataset Image">
 
                     <!-- Subscription Button inside its own form -->
-                    <form action="{{ route('subscribe', ['datasetId' => $dataset->id]) }}" method="POST"
-                        class="d-inline">
-                        @csrf
-                        <button class="subscribe-data btn btn-primary" type="submit">
-                            <i class="fas fa-bolt"></i>
-                            {{ in_array($dataset->id, $subscribedDatasetIds) ? 'Unsubscribe' : 'Subscribe' }}
-                        </button>
-                    </form>
+                    @if (in_array($dataset->id, $subscribedDatasetIds))
+                        <!-- Unsubscribe form -->
+                        <form action="{{ route('unsubscribe', ['datasetId' => $dataset->id]) }}" method="POST">
+                            @csrf
+                            <button class="unsubscribe-data" type="submit">
+                                <i class="fas fa-bolt"></i> Unsubscribe
+                            </button>
+                        </form>
+                    @else
+                        <!-- Subscribe form -->
+                        <form action="{{ route('subscribe', ['datasetId' => $dataset->id]) }}" method="POST"
+                            class="d-inline">
+                            @csrf
+                            <button class="subscribe-data btn btn-primary" type="submit">
+                                <i class="fas fa-bolt"></i> Subscribe
+                            </button>
+                        </form>
+                    @endif
+
                 </div>
 
                 <div class="card-body d-flex flex-column">
