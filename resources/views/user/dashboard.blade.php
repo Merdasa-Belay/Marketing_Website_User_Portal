@@ -51,20 +51,20 @@
                 </a>
             </div>
 
-            {{-- cards for subscribed datasets --}}
-            @if ($subscribedDatasets->isEmpty())
-                <p>You have not subscribed to any datasets yet.</p>
-            @else
+            <div class="container datasets">
                 <div class="row card-container">
-                    @foreach ($subscribedDatasets as $subscription)
-                        @if ($subscription->dataset)
-                            @include('layouts.card', ['dataset' => $subscription->dataset]) <!-- Pass the dataset directly -->
-                        @else
-                            <p>Dataset information is missing for this subscription.</p>
-                        @endif
-                    @endforeach
+                    @if ($subscribedDatasets->isEmpty())
+                        <p>You have not subscribed to any datasets yet.</p>
+                    @else
+                        <!-- Include the card layout and pass the subscribed dataset -->
+                        @include('layouts.card')
+                    @endif
                 </div>
-            @endif
+            </div>
+
+
+
+
 
             <hr>
         </div>

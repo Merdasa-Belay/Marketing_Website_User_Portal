@@ -28,11 +28,18 @@ class DashboardController extends Controller
 
             $datasetsCount = Dataset::count();
 
-
+            // Get the subscribed datasets for the authenticated user
             $subscribedDatasets = $user->subscriptions()->with('dataset')->get()->pluck('dataset');
+            // Get subscribed dataset IDs
+            $subscribedDatasetIds = $subscribedDatasets->pluck('id')->toArray();
+
+            // Set the flag to false for the dashboard
+            $isDataset = false;
 
             $subscriptionCount = $subscribedDatasets->count(); // Get count from paginated results
             // Fetch only the subscribed datasets
+
+            $datasets = Dataset::whereIn('id', $subscribedDatasetIds)->paginate($perPageSubscription);
 
             // Fetch the paginated transactions for the authenticated user
             $transactions = Transaction::paginate($perPageTransaction)->map(function ($transaction) {
@@ -48,6 +55,9 @@ class DashboardController extends Controller
                 'subscriptionCount',
                 'datasetsCount',
                 'transactions',
+                'isDataset',
+                'subscribedDatasetIds',
+                'datasets'
 
             ));
         } else {
