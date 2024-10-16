@@ -18,8 +18,10 @@ class DatasetController extends Controller
             // Get the number of items per page from the request, defaulting to 10
             $perPage = $request->input('per_page', 12);
 
-            // Get subscribed dataset IDs for the authenticated user
-            $subscribedDatasetIds = Subscription::where('user_id', $user->id)->pluck('dataset_id')->toArray();
+            // Get the subscribed datasets for the authenticated user
+            $subscribedDatasets = $user->subscriptions()->with('dataset')->get()->pluck('dataset');
+            // Get subscribed dataset IDs
+            $subscribedDatasetIds = $subscribedDatasets->pluck('id')->toArray();
 
             // Fetch all datasets (or the datasets you want to show)
             $datasets = Dataset::paginate($perPage);
