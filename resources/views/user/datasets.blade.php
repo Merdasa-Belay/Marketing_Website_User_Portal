@@ -7,11 +7,11 @@
 
         <div>
             <div class="dataset-button">
-                <p id="my-subscribes">Datasets</p>
-                <a class="all-dataset-button btn btn-primary mt-3 mt-md-0" href="{{ route('dataset') }}">
+                <p class="my-dataset">Datasets</p>
+                <a class="all-dataset-button btn  mt-3 mt-md-0" href="{{ route('dataset') }}">
                     All Datasets
                 </a>
-                <a class="subscribed-dataset btn btn-primary mt-3 mt-md-0" href="{{ route('dataset') }}">
+                <a class="subscribed-dataset btn  mt-3 mt-md-0" href="{{ route('subscribed.datasets') }}">
                     Subscribed Datasets
                 </a>
             </div>

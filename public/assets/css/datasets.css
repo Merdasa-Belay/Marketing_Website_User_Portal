@@ -18,3 +18,35 @@ body {
     justify-content: flex-start; /* Aligns cards to the left */
     padding: 0 10px; /* Padding for small screens */
 }
+.my-dataset {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.all-dataset-button {
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(to right, #f1c28c, #60b1df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-radius: 6px;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+    border-color: #f1c28c;
+}
+
+.subscribed-dataset {
+    font-size: 16px;
+    font-weight: 600;
+    background: #ffffff;
+    color: #000000;
+
+    border-radius: 6px;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+}
