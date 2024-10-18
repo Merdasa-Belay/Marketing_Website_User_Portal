@@ -23,13 +23,14 @@ class DatasetController extends Controller
             // Get subscribed dataset IDs
             $subscribedDatasetIds = $subscribedDatasets->pluck('id')->toArray();
 
+
             // Fetch all datasets (or the datasets you want to show)
             $datasets = Dataset::paginate($perPage);
             $isDataset = true;
 
 
             // Pass datasets and subscribedDatasetIds to the view
-            return view('user.datasets', compact('user', 'title', 'datasets', 'subscribedDatasetIds', 'isDataset'));
+            return view('user.datasets', compact('user', 'title', 'datasets', 'subscribedDatasetIds', 'isDataset', 'subscribedDatasets'));
         } else {
             // User is not authenticated
             return redirect()->route('login');

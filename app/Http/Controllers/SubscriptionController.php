@@ -35,4 +35,12 @@ class SubscriptionController extends Controller
 
         return redirect()->back()->with('success', 'Successfully unsubscribed!');
     }
+    public function showSubscribedDatasets()
+    {
+        $user = Auth::user();
+        $subscribedDatasetIds = Subscription::where('user_id', $user->id)->pluck('dataset_id');
+        $datasets = Dataset::whereIn('id', $subscribedDatasetIds)->get();
+
+        return view('layouts.subscribed', compact('datasets'));
+    }
 }

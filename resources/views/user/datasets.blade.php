@@ -5,21 +5,23 @@
 
     <div class="container datasets">
 
-        <div>
-            <div class="dataset-button">
-                <p class="my-dataset">Datasets</p>
-                <a class="all-dataset-button btn  mt-3 mt-md-0" href="{{ route('dataset') }}">
-                    All Datasets
-                </a>
-                <a class="subscribed-dataset btn  mt-3 mt-md-0" href="{{ route('subscribed.datasets') }}">
-                    Subscribed Datasets
-                </a>
-            </div>
+        <div class="row card-container justify-content-center">
+            <a href="{{ route('dataset') }}" class="btn btn-primary {{ request()->routeIs('dataset') ? 'active' : '' }}">
+                All Datasets
+            </a>
+            <a href="{{ route('dataset') }}" class="btn btn-secondary {{ request()->routeIs('dataset') ? 'active' : '' }}">
+                Subscribed Datasets
+            </a>
         </div>
-        <div class="row card-container">
 
-            <!-- Include the card layout and pass the dataset -->
-            @include('layouts.card')
+
+        <div class="row card-container">
+            @if ($subscribedDatasets->isEmpty())
+                <p>You have not subscribed to any datasets yet.</p>
+            @else
+                <!-- Include the card layout and pass the subscribed dataset -->
+                @include('layouts.card')
+            @endif
         </div>
     </div>
 @endsection
