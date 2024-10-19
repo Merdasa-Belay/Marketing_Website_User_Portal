@@ -36,5 +36,5 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/subscribe/{datasetId}', [SubscriptionController::class, 'subscribe'])->name('subscribe');
     Route::post('/unsubscribe/{datasetId}', [SubscriptionController::class, 'unsubscribe'])->name('unsubscribe');
-    Route::get('/subscriptions', [SubscriptionController::class, 'showSubscribedDatasets'])->name('subscribed.dataset');
+    Route::get('/datasets/subscribed', [DatasetController::class, 'index'])->name('dataset.subscribed');
 });
