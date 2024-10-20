@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/datasets.css') }}">
 
     <div class="container datasets">
-        <div class="row justify-content-center mb-3">
+        <div class="row">
             <div class="col-auto">
                 <a href="{{ route('dataset') }}" class="btn btn-primary {{ request()->routeIs('dataset') ? 'active' : '' }}">
                     All Datasets
@@ -18,21 +18,23 @@
             </div>
         </div>
 
+        <div class="container datasets">
 
-        <div class="row card-container">
-            @if ($datasets->isEmpty())
-                <p>{{ $isSubscribed ? 'You have not subscribed to any datasets yet.' : 'No datasets available.' }}</p>
-            @else
-                <!-- Include the card layout, pass the dataset -->
-                @include('layouts.card')
+            <div class="row card-container">
+                @if ($datasets->isEmpty())
+                    <p>{{ $isSubscribed ? 'You have not subscribed to any datasets yet.' : 'No datasets available.' }}</p>
+                @else
+                    <!-- Include the card layout, pass the dataset -->
+                    @include('layouts.card')
 
-                <!-- Display pagination links if paginated -->
-                @if (!$isSubscribed)
-                    <div class="pagination-container">
-                        {{ $datasets->links() }}
-                    </div>
+                    <!-- Display pagination links if paginated -->
+                    @if (!$isSubscribed)
+                        <div class="pagination-container">
+                            {{ $datasets->links() }}
+                        </div>
+                    @endif
                 @endif
-            @endif
+            </div>
         </div>
     </div>
 @endsection
